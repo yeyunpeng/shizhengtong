@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA563D3B218707FA0090C103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D3A218707FA0090C103 /* AppDelegate.m */; };
+		DA563D3E218707FA0090C103 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D3D218707FA0090C103 /* ViewController.m */; };
+		DA563D41218707FA0090C103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA563D3F218707FA0090C103 /* Main.storyboard */; };
+		DA563D43218707FC0090C103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA563D42218707FC0090C103 /* Assets.xcassets */; };
+		DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA563D44218707FC0090C103 /* LaunchScreen.storyboard */; };
+		DA563D49218707FC0090C103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D48218707FC0090C103 /* main.m */; };
+		DA563D53218707FC0090C103 /* IDLFaceDetectSDKOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */; };
+		DA563D5E218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA563D4F218707FC0090C103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA563D2E218707FA0090C103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA563D35218707FA0090C103;
+			remoteInfo = IDLFaceDetectSDKOC;
+		};
+		DA563D5A218707FD0090C103 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA563D2E218707FA0090C103 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA563D35218707FA0090C103;
+			remoteInfo = IDLFaceDetectSDKOC;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDLFaceDetectSDKOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D39218707FA0090C103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DA563D3A218707FA0090C103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DA563D3C218707FA0090C103 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DA563D3D218707FA0090C103 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DA563D40218707FA0090C103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA563D42218707FC0090C103 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA563D45218707FC0090C103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA563D47218707FC0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA563D48218707FC0090C103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDLFaceDetectSDKOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLFaceDetectSDKOCTests.m; sourceTree = "<group>"; };
+		DA563D54218707FC0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDLFaceDetectSDKOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLFaceDetectSDKOCUITests.m; sourceTree = "<group>"; };
+		DA563D5F218707FD0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA563D33218707FA0090C103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D4B218707FC0090C103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D56218707FC0090C103 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA563D2D218707FA0090C103 = {
+			isa = PBXGroup;
+			children = (
+				DA563D38218707FA0090C103 /* IDLFaceDetectSDKOC */,
+				DA563D51218707FC0090C103 /* IDLFaceDetectSDKOCTests */,
+				DA563D5C218707FD0090C103 /* IDLFaceDetectSDKOCUITests */,
+				DA563D37218707FA0090C103 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA563D37218707FA0090C103 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */,
+				DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */,
+				DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA563D38218707FA0090C103 /* IDLFaceDetectSDKOC */ = {
+			isa = PBXGroup;
+			children = (
+				DA563D39218707FA0090C103 /* AppDelegate.h */,
+				DA563D3A218707FA0090C103 /* AppDelegate.m */,
+				DA563D3C218707FA0090C103 /* ViewController.h */,
+				DA563D3D218707FA0090C103 /* ViewController.m */,
+				DA563D3F218707FA0090C103 /* Main.storyboard */,
+				DA563D42218707FC0090C103 /* Assets.xcassets */,
+				DA563D44218707FC0090C103 /* LaunchScreen.storyboard */,
+				DA563D47218707FC0090C103 /* Info.plist */,
+				DA563D48218707FC0090C103 /* main.m */,
+			);
+			path = IDLFaceDetectSDKOC;
+			sourceTree = "<group>";
+		};
+		DA563D51218707FC0090C103 /* IDLFaceDetectSDKOCTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */,
+				DA563D54218707FC0090C103 /* Info.plist */,
+			);
+			path = IDLFaceDetectSDKOCTests;
+			sourceTree = "<group>";
+		};
+		DA563D5C218707FD0090C103 /* IDLFaceDetectSDKOCUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */,
+				DA563D5F218707FD0090C103 /* Info.plist */,
+			);
+			path = IDLFaceDetectSDKOCUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOC" */;
+			buildPhases = (
+				DA563D32218707FA0090C103 /* Sources */,
+				DA563D33218707FA0090C103 /* Frameworks */,
+				DA563D34218707FA0090C103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = IDLFaceDetectSDKOC;
+			productName = IDLFaceDetectSDKOC;
+			productReference = DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA563D4D218707FC0090C103 /* IDLFaceDetectSDKOCTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCTests" */;
+			buildPhases = (
+				DA563D4A218707FC0090C103 /* Sources */,
+				DA563D4B218707FC0090C103 /* Frameworks */,
+				DA563D4C218707FC0090C103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA563D50218707FC0090C103 /* PBXTargetDependency */,
+			);
+			name = IDLFaceDetectSDKOCTests;
+			productName = IDLFaceDetectSDKOCTests;
+			productReference = DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA563D58218707FC0090C103 /* IDLFaceDetectSDKOCUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCUITests" */;
+			buildPhases = (
+				DA563D55218707FC0090C103 /* Sources */,
+				DA563D56218707FC0090C103 /* Frameworks */,
+				DA563D57218707FC0090C103 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA563D5B218707FD0090C103 /* PBXTargetDependency */,
+			);
+			name = IDLFaceDetectSDKOCUITests;
+			productName = IDLFaceDetectSDKOCUITests;
+			productReference = DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA563D2E218707FA0090C103 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = zhangxiaoqing;
+				TargetAttributes = {
+					DA563D35218707FA0090C103 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					DA563D4D218707FC0090C103 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = DA563D35218707FA0090C103;
+					};
+					DA563D58218707FC0090C103 = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = DA563D35218707FA0090C103;
+					};
+				};
+			};
+			buildConfigurationList = DA563D31218707FA0090C103 /* Build configuration list for PBXProject "IDLFaceDetectSDKOC" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA563D2D218707FA0090C103;
+			productRefGroup = DA563D37218707FA0090C103 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */,
+				DA563D4D218707FC0090C103 /* IDLFaceDetectSDKOCTests */,
+				DA563D58218707FC0090C103 /* IDLFaceDetectSDKOCUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA563D34218707FA0090C103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */,
+				DA563D43218707FC0090C103 /* Assets.xcassets in Resources */,
+				DA563D41218707FA0090C103 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D4C218707FC0090C103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D57218707FC0090C103 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA563D32218707FA0090C103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA563D3E218707FA0090C103 /* ViewController.m in Sources */,
+				DA563D49218707FC0090C103 /* main.m in Sources */,
+				DA563D3B218707FA0090C103 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D4A218707FC0090C103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA563D53218707FC0090C103 /* IDLFaceDetectSDKOCTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA563D55218707FC0090C103 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA563D5E218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA563D50218707FC0090C103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */;
+			targetProxy = DA563D4F218707FC0090C103 /* PBXContainerItemProxy */;
+		};
+		DA563D5B218707FD0090C103 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */;
+			targetProxy = DA563D5A218707FD0090C103 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA563D3F218707FA0090C103 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA563D40218707FA0090C103 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA563D44218707FC0090C103 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA563D45218707FC0090C103 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA563D60218707FD0090C103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DA563D61218707FD0090C103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA563D63218707FD0090C103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA563D64218707FD0090C103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOC;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA563D66218707FD0090C103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDLFaceDetectSDKOC.app/IDLFaceDetectSDKOC";
+			};
+			name = Debug;
+		};
+		DA563D67218707FD0090C103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOCTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDLFaceDetectSDKOC.app/IDLFaceDetectSDKOC";
+			};
+			name = Release;
+		};
+		DA563D69218707FD0090C103 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IDLFaceDetectSDKOC;
+			};
+			name = Debug;
+		};
+		DA563D6A218707FD0090C103 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C789GLWV85;
+				INFOPLIST_FILE = IDLFaceDetectSDKOCUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = IDLFaceDetectSDKOC;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA563D31218707FA0090C103 /* Build configuration list for PBXProject "IDLFaceDetectSDKOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA563D60218707FD0090C103 /* Debug */,
+				DA563D61218707FD0090C103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOC" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA563D63218707FD0090C103 /* Debug */,
+				DA563D64218707FD0090C103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA563D66218707FD0090C103 /* Debug */,
+				DA563D67218707FD0090C103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA563D69218707FD0090C103 /* Debug */,
+				DA563D6A218707FD0090C103 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA563D2E218707FA0090C103 /* Project object */;
+}
