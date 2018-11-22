@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DNq-kw-BJM"/>
+                        <viewControllerLayoutGuide type="bottom" id="d9P-Xh-vwf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgImage" translatesAutoresizingMaskIntoConstraints="NO" id="Xru-FJ-pJO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="百度人脸识别" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OF8-SX-q4w">
+                                <rect key="frame" x="36" y="86" width="303" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="XjI-Py-JM5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FHw-9T-lGn">
+                                <rect key="frame" x="46" y="206" width="283" height="40"/>
+                                <color key="backgroundColor" red="0.2196078431372549" green="0.792156862745098" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="tgy-yE-Qx8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <state key="normal" title="人脸图像采集">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="DetectAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="d4z-Hp-5mK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FHw-9T-lGn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="4ec-uz-YF5"/>
+                            <constraint firstItem="OF8-SX-q4w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="5Ho-Br-KSF"/>
+                            <constraint firstItem="d9P-Xh-vwf" firstAttribute="top" secondItem="Xru-FJ-pJO" secondAttribute="bottom" id="Jbe-XU-FlY"/>
+                            <constraint firstItem="Xru-FJ-pJO" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="XVm-5S-Cu1"/>
+                            <constraint firstAttribute="trailing" secondItem="Xru-FJ-pJO" secondAttribute="trailing" id="cw4-a1-aRx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FHw-9T-lGn" secondAttribute="trailing" constant="30" id="kit-jT-no5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OF8-SX-q4w" secondAttribute="trailing" constant="20" id="mAV-Jj-QJ1"/>
+                            <constraint firstItem="Xru-FJ-pJO" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sjb-sk-sXg"/>
+                            <constraint firstItem="OF8-SX-q4w" firstAttribute="top" secondItem="DNq-kw-BJM" secondAttribute="bottom" constant="66" id="sw8-DX-QBp"/>
+                            <constraint firstItem="FHw-9T-lGn" firstAttribute="top" secondItem="OF8-SX-q4w" secondAttribute="bottom" constant="80" id="zSJ-0R-bhQ"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.68365817091455"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bgImage" width="414" height="735"/>
+    </resources>
+</document>
