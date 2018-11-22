@@ -25,7 +25,6 @@
 		DA6F734021A57F9300C458A8 /* IDLFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */; };
 		DA6F734121A57F9300C458A8 /* com.baidu.idl.face.model.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */; };
 		DA6F734221A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */; };
-		DAA17D9D21A64E4100D9A649 /* idl-license.face-ios in Resources */ = {isa = PBXBuildFile; fileRef = DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,7 +78,6 @@
 		DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDLFaceSDK.framework; sourceTree = "<group>"; };
 		DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.model.bundle; sourceTree = "<group>"; };
 		DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.faceSDK.bundle; sourceTree = "<group>"; };
-		DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "idl-license.face-ios"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,7 +211,6 @@
 		DA6F733C21A57F9300C458A8 /* FaceSDK */ = {
 			isa = PBXGroup;
 			children = (
-				DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */,
 				DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */,
 				DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */,
 				DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */,
@@ -327,7 +324,6 @@
 			files = (
 				DA6F734121A57F9300C458A8 /* com.baidu.idl.face.model.bundle in Resources */,
 				DA6F734221A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle in Resources */,
-				DAA17D9D21A64E4100D9A649 /* idl-license.face-ios in Resources */,
 				DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */,
 				DA563D43218707FC0090C103 /* Assets.xcassets in Resources */,
 				DA563D41218707FA0090C103 /* Main.storyboard in Resources */,
