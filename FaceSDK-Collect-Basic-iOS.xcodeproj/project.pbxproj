@@ -12,12 +12,8 @@
 		DA563D43218707FC0090C103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA563D42218707FC0090C103 /* Assets.xcassets */; };
 		DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA563D44218707FC0090C103 /* LaunchScreen.storyboard */; };
 		DA563D49218707FC0090C103 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D48218707FC0090C103 /* main.m */; };
-		DA563D53218707FC0090C103 /* IDLFaceDetectSDKOCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */; };
-		DA563D5E218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */; };
-		DA563D7021870B8C0090C103 /* IDLFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA563D6C21870B8C0090C103 /* IDLFaceSDK.framework */; };
-		DA563D7121870B8C0090C103 /* idl-license.face-ios in Resources */ = {isa = PBXBuildFile; fileRef = DA563D6D21870B8C0090C103 /* idl-license.face-ios */; };
-		DA563D7221870B8C0090C103 /* com.baidu.idl.face.model.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA563D6E21870B8C0090C103 /* com.baidu.idl.face.model.bundle */; };
-		DA563D7321870B8C0090C103 /* com.baidu.idl.face.faceSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA563D6F21870B8C0090C103 /* com.baidu.idl.face.faceSDK.bundle */; };
+		DA563D53218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D52218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.m */; };
+		DA563D5E218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D5D218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.m */; };
 		DA563D8621870BE80090C103 /* ImageUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D7621870BE80090C103 /* ImageUtils.m */; };
 		DA563D8721870BE80090C103 /* VideoCaptureDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D7A21870BE80090C103 /* VideoCaptureDevice.m */; };
 		DA563D8821870BE80090C103 /* DetectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D7C21870BE80090C103 /* DetectionViewController.m */; };
@@ -26,6 +22,10 @@
 		DA563D8B21870BE80090C103 /* CircleView.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D7F21870BE80090C103 /* CircleView.m */; };
 		DA563D8C21870BE80090C103 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D8021870BE80090C103 /* ViewController.m */; };
 		DA563D8F21870C9C0090C103 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DA563D8E21870C9C0090C103 /* libc++.tbd */; };
+		DA6F734021A57F9300C458A8 /* IDLFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */; };
+		DA6F734121A57F9300C458A8 /* com.baidu.idl.face.model.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */; };
+		DA6F734221A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */; };
+		DAA17D9D21A64E4100D9A649 /* idl-license.face-ios in Resources */ = {isa = PBXBuildFile; fileRef = DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,19 +34,19 @@
 			containerPortal = DA563D2E218707FA0090C103 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DA563D35218707FA0090C103;
-			remoteInfo = IDLFaceDetectSDKOC;
+			remoteInfo = "FaceSDK-Collect-Basic-iOS";
 		};
 		DA563D5A218707FD0090C103 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DA563D2E218707FA0090C103 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = DA563D35218707FA0090C103;
-			remoteInfo = IDLFaceDetectSDKOC;
+			remoteInfo = "FaceSDK-Collect-Basic-iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IDLFaceDetectSDKOC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D36218707FA0090C103 /* FaceSDK-Collect-Basic-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FaceSDK-Collect-Basic-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA563D39218707FA0090C103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA563D3A218707FA0090C103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DA563D40218707FA0090C103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -54,16 +54,12 @@
 		DA563D45218707FC0090C103 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA563D47218707FC0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DA563D48218707FC0090C103 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDLFaceDetectSDKOCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLFaceDetectSDKOCTests.m; sourceTree = "<group>"; };
+		DA563D4E218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FaceSDK-Collect-Basic-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D52218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FaceSDK-Collect-Basic-iOSTests.m"; sourceTree = "<group>"; };
 		DA563D54218707FC0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IDLFaceDetectSDKOCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IDLFaceDetectSDKOCUITests.m; sourceTree = "<group>"; };
+		DA563D59218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FaceSDK-Collect-Basic-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA563D5D218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "FaceSDK-Collect-Basic-iOSUITests.m"; sourceTree = "<group>"; };
 		DA563D5F218707FD0090C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA563D6C21870B8C0090C103 /* IDLFaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDLFaceSDK.framework; sourceTree = "<group>"; };
-		DA563D6D21870B8C0090C103 /* idl-license.face-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "idl-license.face-ios"; sourceTree = "<group>"; };
-		DA563D6E21870B8C0090C103 /* com.baidu.idl.face.model.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.model.bundle; sourceTree = "<group>"; };
-		DA563D6F21870B8C0090C103 /* com.baidu.idl.face.faceSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.faceSDK.bundle; sourceTree = "<group>"; };
 		DA563D7421870BC30090C103 /* FaceParameterConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FaceParameterConfig.h; sourceTree = "<group>"; };
 		DA563D7621870BE80090C103 /* ImageUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageUtils.m; sourceTree = "<group>"; };
 		DA563D7721870BE80090C103 /* ImageUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageUtils.h; sourceTree = "<group>"; };
@@ -80,6 +76,10 @@
 		DA563D8421870BE80090C103 /* RemindView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemindView.h; sourceTree = "<group>"; };
 		DA563D8521870BE80090C103 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		DA563D8E21870C9C0090C103 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDLFaceSDK.framework; sourceTree = "<group>"; };
+		DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.model.bundle; sourceTree = "<group>"; };
+		DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = com.baidu.idl.face.faceSDK.bundle; sourceTree = "<group>"; };
+		DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "idl-license.face-ios"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +87,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6F734021A57F9300C458A8 /* IDLFaceSDK.framework in Frameworks */,
 				DA563D8F21870C9C0090C103 /* libc++.tbd in Frameworks */,
-				DA563D7021870B8C0090C103 /* IDLFaceSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,10 +112,10 @@
 		DA563D2D218707FA0090C103 = {
 			isa = PBXGroup;
 			children = (
-				DA563D6B21870B8C0090C103 /* FaceSDK */,
-				DA563D38218707FA0090C103 /* IDLFaceDetectSDKOC */,
-				DA563D51218707FC0090C103 /* IDLFaceDetectSDKOCTests */,
-				DA563D5C218707FD0090C103 /* IDLFaceDetectSDKOCUITests */,
+				DA6F733C21A57F9300C458A8 /* FaceSDK */,
+				DA563D38218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */,
+				DA563D51218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests */,
+				DA563D5C218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests */,
 				DA563D37218707FA0090C103 /* Products */,
 				DA563D8D21870C9C0090C103 /* Frameworks */,
 			);
@@ -124,14 +124,14 @@
 		DA563D37218707FA0090C103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */,
-				DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */,
-				DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */,
+				DA563D36218707FA0090C103 /* FaceSDK-Collect-Basic-iOS.app */,
+				DA563D4E218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.xctest */,
+				DA563D59218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DA563D38218707FA0090C103 /* IDLFaceDetectSDKOC */ = {
+		DA563D38218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */ = {
 			isa = PBXGroup;
 			children = (
 				DA563D39218707FA0090C103 /* AppDelegate.h */,
@@ -146,36 +146,25 @@
 				DA563D47218707FC0090C103 /* Info.plist */,
 				DA563D48218707FC0090C103 /* main.m */,
 			);
-			path = IDLFaceDetectSDKOC;
+			path = "FaceSDK-Collect-Basic-iOS";
 			sourceTree = "<group>";
 		};
-		DA563D51218707FC0090C103 /* IDLFaceDetectSDKOCTests */ = {
+		DA563D51218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
-				DA563D52218707FC0090C103 /* IDLFaceDetectSDKOCTests.m */,
+				DA563D52218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.m */,
 				DA563D54218707FC0090C103 /* Info.plist */,
 			);
-			path = IDLFaceDetectSDKOCTests;
+			path = "FaceSDK-Collect-Basic-iOSTests";
 			sourceTree = "<group>";
 		};
-		DA563D5C218707FD0090C103 /* IDLFaceDetectSDKOCUITests */ = {
+		DA563D5C218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DA563D5D218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m */,
+				DA563D5D218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.m */,
 				DA563D5F218707FD0090C103 /* Info.plist */,
 			);
-			path = IDLFaceDetectSDKOCUITests;
-			sourceTree = "<group>";
-		};
-		DA563D6B21870B8C0090C103 /* FaceSDK */ = {
-			isa = PBXGroup;
-			children = (
-				DA563D6C21870B8C0090C103 /* IDLFaceSDK.framework */,
-				DA563D6D21870B8C0090C103 /* idl-license.face-ios */,
-				DA563D6E21870B8C0090C103 /* com.baidu.idl.face.model.bundle */,
-				DA563D6F21870B8C0090C103 /* com.baidu.idl.face.faceSDK.bundle */,
-			);
-			path = FaceSDK;
+			path = "FaceSDK-Collect-Basic-iOSUITests";
 			sourceTree = "<group>";
 		};
 		DA563D7521870BE80090C103 /* Utils */ = {
@@ -221,12 +210,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		DA6F733C21A57F9300C458A8 /* FaceSDK */ = {
+			isa = PBXGroup;
+			children = (
+				DAA17D9C21A64E4100D9A649 /* idl-license.face-ios */,
+				DA6F733D21A57F9300C458A8 /* IDLFaceSDK.framework */,
+				DA6F733E21A57F9300C458A8 /* com.baidu.idl.face.model.bundle */,
+				DA6F733F21A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle */,
+			);
+			name = FaceSDK;
+			path = "FaceSDK-Collect-Basic-iOS/Frameworks/FaceSDK";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */ = {
+		DA563D35218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOC" */;
+			buildConfigurationList = DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOS" */;
 			buildPhases = (
 				DA563D32218707FA0090C103 /* Sources */,
 				DA563D33218707FA0090C103 /* Frameworks */,
@@ -236,14 +237,14 @@
 			);
 			dependencies = (
 			);
-			name = IDLFaceDetectSDKOC;
-			productName = IDLFaceDetectSDKOC;
-			productReference = DA563D36218707FA0090C103 /* IDLFaceDetectSDKOC.app */;
+			name = "FaceSDK-Collect-Basic-iOS";
+			productName = "FaceSDK-Collect-Basic-iOS";
+			productReference = DA563D36218707FA0090C103 /* FaceSDK-Collect-Basic-iOS.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DA563D4D218707FC0090C103 /* IDLFaceDetectSDKOCTests */ = {
+		DA563D4D218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCTests" */;
+			buildConfigurationList = DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOSTests" */;
 			buildPhases = (
 				DA563D4A218707FC0090C103 /* Sources */,
 				DA563D4B218707FC0090C103 /* Frameworks */,
@@ -254,14 +255,14 @@
 			dependencies = (
 				DA563D50218707FC0090C103 /* PBXTargetDependency */,
 			);
-			name = IDLFaceDetectSDKOCTests;
-			productName = IDLFaceDetectSDKOCTests;
-			productReference = DA563D4E218707FC0090C103 /* IDLFaceDetectSDKOCTests.xctest */;
+			name = "FaceSDK-Collect-Basic-iOSTests";
+			productName = "FaceSDK-Collect-Basic-iOSTests";
+			productReference = DA563D4E218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DA563D58218707FC0090C103 /* IDLFaceDetectSDKOCUITests */ = {
+		DA563D58218707FC0090C103 /* FaceSDK-Collect-Basic-iOSUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCUITests" */;
+			buildConfigurationList = DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOSUITests" */;
 			buildPhases = (
 				DA563D55218707FC0090C103 /* Sources */,
 				DA563D56218707FC0090C103 /* Frameworks */,
@@ -272,9 +273,9 @@
 			dependencies = (
 				DA563D5B218707FD0090C103 /* PBXTargetDependency */,
 			);
-			name = IDLFaceDetectSDKOCUITests;
-			productName = IDLFaceDetectSDKOCUITests;
-			productReference = DA563D59218707FD0090C103 /* IDLFaceDetectSDKOCUITests.xctest */;
+			name = "FaceSDK-Collect-Basic-iOSUITests";
+			productName = "FaceSDK-Collect-Basic-iOSUITests";
+			productReference = DA563D59218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -299,7 +300,7 @@
 					};
 				};
 			};
-			buildConfigurationList = DA563D31218707FA0090C103 /* Build configuration list for PBXProject "IDLFaceDetectSDKOC" */;
+			buildConfigurationList = DA563D31218707FA0090C103 /* Build configuration list for PBXProject "FaceSDK-Collect-Basic-iOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -312,9 +313,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */,
-				DA563D4D218707FC0090C103 /* IDLFaceDetectSDKOCTests */,
-				DA563D58218707FC0090C103 /* IDLFaceDetectSDKOCUITests */,
+				DA563D35218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */,
+				DA563D4D218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests */,
+				DA563D58218707FC0090C103 /* FaceSDK-Collect-Basic-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,12 +325,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6F734121A57F9300C458A8 /* com.baidu.idl.face.model.bundle in Resources */,
+				DA6F734221A57F9300C458A8 /* com.baidu.idl.face.faceSDK.bundle in Resources */,
+				DAA17D9D21A64E4100D9A649 /* idl-license.face-ios in Resources */,
 				DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */,
 				DA563D43218707FC0090C103 /* Assets.xcassets in Resources */,
-				DA563D7121870B8C0090C103 /* idl-license.face-ios in Resources */,
 				DA563D41218707FA0090C103 /* Main.storyboard in Resources */,
-				DA563D7321870B8C0090C103 /* com.baidu.idl.face.faceSDK.bundle in Resources */,
-				DA563D7221870B8C0090C103 /* com.baidu.idl.face.model.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +371,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA563D53218707FC0090C103 /* IDLFaceDetectSDKOCTests.m in Sources */,
+				DA563D53218707FC0090C103 /* FaceSDK-Collect-Basic-iOSTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,7 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA563D5E218707FD0090C103 /* IDLFaceDetectSDKOCUITests.m in Sources */,
+				DA563D5E218707FD0090C103 /* FaceSDK-Collect-Basic-iOSUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,12 +388,12 @@
 /* Begin PBXTargetDependency section */
 		DA563D50218707FC0090C103 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */;
+			target = DA563D35218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */;
 			targetProxy = DA563D4F218707FC0090C103 /* PBXContainerItemProxy */;
 		};
 		DA563D5B218707FD0090C103 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DA563D35218707FA0090C103 /* IDLFaceDetectSDKOC */;
+			target = DA563D35218707FA0090C103 /* FaceSDK-Collect-Basic-iOS */;
 			targetProxy = DA563D5A218707FD0090C103 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -535,16 +536,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y857G3VXH;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceSDK",
+					"$(PROJECT_DIR)/FaceSDK-Collect-Basic-iOS/Frameworks/FaceSDK",
 				);
-				INFOPLIST_FILE = IDLFaceDetectSDKOC/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = facesdktest01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -557,16 +561,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3Y857G3VXH;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceSDK",
+					"$(PROJECT_DIR)/FaceSDK-Collect-Basic-iOS/Frameworks/FaceSDK",
 				);
-				INFOPLIST_FILE = IDLFaceDetectSDKOC/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = facesdktest01;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -579,16 +586,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C789GLWV85;
-				INFOPLIST_FILE = IDLFaceDetectSDKOCTests/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.aip.FaceSDK-Collect-Basic-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDLFaceDetectSDKOC.app/IDLFaceDetectSDKOC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceSDK-Collect-Basic-iOS.app/FaceSDK-Collect-Basic-iOS";
 			};
 			name = Debug;
 		};
@@ -598,16 +605,16 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C789GLWV85;
-				INFOPLIST_FILE = IDLFaceDetectSDKOCTests/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.aip.FaceSDK-Collect-Basic-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IDLFaceDetectSDKOC.app/IDLFaceDetectSDKOC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FaceSDK-Collect-Basic-iOS.app/FaceSDK-Collect-Basic-iOS";
 			};
 			name = Release;
 		};
@@ -616,16 +623,16 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C789GLWV85;
-				INFOPLIST_FILE = IDLFaceDetectSDKOCUITests/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOSUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.aip.FaceSDK-Collect-Basic-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IDLFaceDetectSDKOC;
+				TEST_TARGET_NAME = "FaceSDK-Collect-Basic-iOS";
 			};
 			name = Debug;
 		};
@@ -634,23 +641,23 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C789GLWV85;
-				INFOPLIST_FILE = IDLFaceDetectSDKOCUITests/Info.plist;
+				INFOPLIST_FILE = "FaceSDK-Collect-Basic-iOSUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.baidu.aip.IDLFaceDetectSDKOCUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.baidu.aip.FaceSDK-Collect-Basic-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = IDLFaceDetectSDKOC;
+				TEST_TARGET_NAME = "FaceSDK-Collect-Basic-iOS";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DA563D31218707FA0090C103 /* Build configuration list for PBXProject "IDLFaceDetectSDKOC" */ = {
+		DA563D31218707FA0090C103 /* Build configuration list for PBXProject "FaceSDK-Collect-Basic-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA563D60218707FD0090C103 /* Debug */,
@@ -659,7 +666,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOC" */ = {
+		DA563D62218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA563D63218707FD0090C103 /* Debug */,
@@ -668,7 +675,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCTests" */ = {
+		DA563D65218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA563D66218707FD0090C103 /* Debug */,
@@ -677,7 +684,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "IDLFaceDetectSDKOCUITests" */ = {
+		DA563D68218707FD0090C103 /* Build configuration list for PBXNativeTarget "FaceSDK-Collect-Basic-iOSUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DA563D69218707FD0090C103 /* Debug */,
