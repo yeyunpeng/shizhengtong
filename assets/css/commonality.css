@@ -1,0 +1,85 @@
+.hui-header{
+	background: #FFFFFF;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+.title{
+	width: 200px;
+	position: absolute;
+	left: 50%;
+	margin-left: -100px;
+	height: 44px;
+	line-height: 44px;
+	color: #030303;
+	font-size: 17px;
+	font-weight:500;
+}
+#hui-back:before{
+	color: #2439A5;
+}
+/*banner 页面*/
+.banner .recommend{
+	width: 260px;
+	height: 204px;
+	margin: 0 auto;
+	margin-top:60px ;
+	margin-bottom: 20px;
+}
+.banner .img_1{
+	background: url(../img/fangbian.png) no-repeat;
+	background-size:100% 100%;
+}
+.banner .img_2{
+	background: url(../img/anquan.png) no-repeat;
+	background-size:100% 100%;
+}
+.banner .img_3{
+	background: url(../img/kuaijie.png) no-repeat;
+	background-size:100% 100%;
+}
+.banner .recommend_text{
+	height: 24px;
+	margin: 0 auto;
+}
+.banner .text_1{
+	width: 168px;
+	margin-top: 64px;
+	background:url(../img/recommend_text1.png) no-repeat ;
+	background-size: 100% 100%;
+}
+.banner .text_2{
+	width: 157px;
+	background:url(../img/recommend_text2.png) no-repeat ;
+	background-size: 100% 100%;
+}
+.banner .text_3{
+	width: 162px;
+	background:url(../img/recommend_text3.png) no-repeat ;
+	background-size: 100% 100%;
+}
+.banner .text_4{
+	width: 162px;
+	background:url(../img/recommend_text4.png) no-repeat ;
+	background-size: 100% 100%;
+	margin-bottom: 48px;
+}
+/*c1-c5*/
+.content{
+	margin: 24px 21px;
+}
+.tit_top{
+	text-align: center;
+	font-size: 18px;
+	font-weight: 700;
+	margin-top: 5px;
+}
+.tit_head{
+	font-size: 16px;
+	font-weight: 700;
+	margin-top: 10px;
+	color: #333333;
+}
+.tit_text{
+	font-size: 14px;
+	margin-top: 5px;
+	color: #333333;
+}

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <title>HUI</title>
+            <link rel="stylesheet" type="text/css" href="./css/hui.css" />
+            <style type="text/css">
+                body {
+                    background: rgba(234, 234, 236, 1);
+                    
+                }
+            
+            .line {
+                height: 20px;
+            }
+            
+            #hui-back:before {
+                font-size: 18px;
+                color: #2439A5;
+            }
+            
+            #hui-back:before {
+                color: #2439A5;
+            }
+            </style>
+            </head>
+    <body>
+        <header class="hui-header" style="background: #FBFBFB;">
+            <div id="hui-back" style="color: #2439A5;"></div>
+            <span style="width: 200px;height: 40px;line-height: 40px;position: absolute;left: 50%;margin-left: -100px;font-size: 17px;color: #030303;">实名身份验证</span>
+        </header>
+        <div class="hui-wrap">
+            
+            <div style="height:15px;">
+                
+            </div>
+            <form style="" class="hui-form" id="form1">
+                <div class="hui-form-items">
+                    <div class="hui-form-items-title">姓名</div>
+                    <input id="name" type="text" class="hui-input" placeholder="请输入您本人姓名" name="nickname" checkType="string" checkData="2,10"
+                    checkMsg="姓名应为2-10个字符" />
+                </div>
+                <div class="hui-form-items">
+                    <div class="hui-form-items-title">身份证号</div>
+                    <input id="num" type="number" class="hui-input hui-input-clear" placeholder="请输入您身份证号码" name="id_card_num" />
+                </div>
+            </form>
+            
+            <div style="padding:15px 8px;">
+                <button id="photo" type="button" class="hui-button hui-button-large" style="margin-top:15px;background: #2439A5;border-radius:24px;color: #FFFFFF;font-size: 18px;">实名认证</button>
+            </div>
+            
+            <div>
+                
+            </div>
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="js/fastclick.js"></script>
+        <script>
+            $(function() {
+              FastClick.attach(document.body);
+              });
+            </script>
+        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/hui-form.js"></script>
+        <script type="text/javascript">
+            function gotoActivity(name, num, id) {
+                var dict = {"name":name, "num":num, "id":id};
+                window.webkit.messageHandlers.Camera.postMessage(dict);
+            }
+        </script>
+        
+        <script>
+            hui.formInit();
+            //表单验证
+            hui('#photo').click(function() {
+                                var id = localStorage.getItem("id");
+                                var res = huiFormCheck('#form1');
+                                //提交
+                                if (res) {
+                                // var data = hui.getFormData('#form1');
+                                // console.log(JSON.stringify(data));
+                                gotoActivity(hui('#name').val(), hui('#num').val(), id);
+                                }
+                                });
+                                //附加验证函数用于单选多选等特殊检查项目
+                                function huiFormCheckAttach() {
+                                    if (hui('#num').val().length != 18) {
+                                        hui.toast('身份号码格式错误');
+                                        return false;
+                                    }
+                                    
+                                    return true;
+                                    
+                                }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: PingFangSC-Regular;
+}
+header{
+    font-family:Helvetica;
+    height:44px;
+    font-size:17px;
+    line-height: 44px;
+    color:#030303;
+    font-weight:500;
+    text-align: center;
+    background: #FFFFFF;
+    position: relative;
+}
+header img{
+    position: absolute;
+    width: 12px;
+    height: 21px;
+    left: 10px;
+    top: 12px;
+}

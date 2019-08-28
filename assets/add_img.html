@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>上传信息</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script type="text/javascript" src="./js/svg.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+
+    <style type="text/css">
+body {
+	background: #efd;
+}
+section {
+	width: 1200px;
+	margin: 200px auto;
+}
+article {
+	border: 1px solid #ccc;
+	padding: 20px;
+}
+.icon {
+	width: 2em;
+	height: 2em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
+.item {
+	float: left;
+	position: relative;
+	margin: 20px;
+}
+.addImg {
+	width: 190px;
+	height: 190px;
+}
+.upload_input {
+	display: none;
+}
+.preview {
+	position: absolute;
+	width: 190px;
+	height: 190px;
+	left: 0;
+	top: 0;
+}
+.click {
+	position: absolute;
+	width: 190px;
+	height: 190px;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	cursor: pointer;
+}
+.delete {
+	position: absolute;
+	right: -2rem;
+	top: -1rem;
+	cursor: pointer;
+	display: none;
+}
+.preview img {
+	width: 100%;
+	height: 100%;
+}
+</style>
+</head>
+<body>
+
+<section>
+    <h2>svg制作多图上传</h2>
+    <article>
+        <form id="form1" method="post" action="http://1o669531n3.imwork.net:42997/user/fileUpload" enctype="multipart/form-data">
+            <div class="item">
+                <svg class="icon addImg" aria-hidden="true">
+                    <use xlink:href="#icon-tianjiatupian"></use>
+                </svg>
+                <input name="file" type="file" class="upload_input" onChange="preview(this)">
+                <div class="preview"></div>
+                <div class="click" onClick="loadImg(this)"></div>
+                <div class="delete" onClick="deleteImg(this)">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shanchu4"></use>
+                    </svg>
+                </div>
+            </div>
+            <div class="item">
+                <svg class="icon addImg" aria-hidden="true">
+                    <use xlink:href="#icon-tianjiatupian"></use>
+                </svg>
+                <input name="file" type="file" class="upload_input" onChange="preview(this)">
+                <div class="preview"></div>
+                <div class="click" onClick="loadImg(this)"></div>
+                <div class="delete" onClick="deleteImg(this)">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shanchu4"></use>
+                    </svg>
+                </div>
+            </div>
+            <input id="name1" name="name" type="text" >
+            <!--<button id="ok" class="btn btn-default">提交</button>-->
+            <button type="submit">提交</button>
+        </form>
+
+    </article>
+</section>
+
+<script type="text/javascript">
+  //选择图片
+  var loadImg = function(obj){
+    $(obj).parent().find(".upload_input").click();
+  }
+  //删除
+  var deleteImg = function(obj){
+    $(obj).parent().find('input').val('');
+    $(obj).parent().find('.preview').html('');
+    $(obj).hide();
+  }
+</script>
+
+<!-- 预览 -->
+<script type="text/javascript">
+function preview(file) {
+  var prevDiv = $(file).parent().find('.preview');
+  if (file.files && file.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(evt) {
+      prevDiv.html('<img src="' + evt.target.result + '" />');
+    }
+    reader.readAsDataURL(file.files[0]);
+  } else {//IE
+    prevDiv.html('<div class="img" style="filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod=scale,src=\'' + file.value + '\'"></div>');
+  }
+  $(file).parent().find('.delete').show();
+}
+</script>
+<!--<script type="text/javascript">-->
+<!--$("#ok").click(function() {-->
+<!--$("#form1").ajaxSubmit({-->
+<!--url: "http://1o669531n3.imwork.net:42997/user/upload",-->
+<!--type: "post",-->
+<!--dataType: 'json',-->
+<!--success: function(data) {-->
+<!--alert("成功！");-->
+<!--},-->
+<!--error: function(data) {-->
+<!--}-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+
+
+<!--<script>-->
+<!--$('#ok').on('click', function() {-->
+<!--var fd = new FormData();-->
+<!--fd.append("upload", 1);-->
+<!--fd.append("upfile", $("#upfile").get(0).files[0]);-->
+<!--$.ajax({-->
+<!--url: "http://1o669531n3.imwork.net:42997/user/upload",-->
+<!--type: "POST",-->
+<!--processData: false,-->
+<!--contentType: false,-->
+<!--data: fd,-->
+<!--success: function(d) {-->
+<!--console.log(d);-->
+<!--}-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+</body>
+</html>

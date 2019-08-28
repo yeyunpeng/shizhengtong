@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="./css/hui.css"/>
+    <style type="text/css">
+        body {
+            background: #EAEAEC;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .title {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            font-size: 17px;
+            color: #000000;
+
+        }
+
+        #hui-back:before {
+            color: #2439A5;
+        }
+
+        .hui-header {
+            background: #FFF;
+        }
+
+        .form {
+            width: 100%;
+            background: #FFFFFF;
+            margin-top: 16px;
+        }
+
+        .check {
+            height: 49px;
+            line-height: 49px;
+            border-bottom: 1px solid #EAEAEC;
+            margin-left: 20px;
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        .hint {
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .import {
+            border: 0px;
+            position: absolute;
+            left: 80px;
+            height: 30px;
+            width: 200px;
+            top: 50%;
+            margin-top: -15px;
+            font-size: 14px;
+        }
+
+        .send {
+            position: absolute;
+            width: 70px;
+            height: 24px;
+            right: 16px;
+            top: 50%;
+            margin-top: -12px;
+            line-height: 24px;
+            text-align: center;
+            border: 1px solid #2439A5;
+            color: #2439A5;
+            border-radius: 2px;
+            font-size: 12px;
+            background: #fff;
+        }
+
+        .service {
+            height: 20px;
+            padding-left: 20px;
+            margin-top: 16px;
+            position: relative;
+        }
+
+        .btn {
+            background: #2439A5;
+            text-align: center;
+            margin: 16px;
+            height: 47px;
+            line-height: 47px;
+            border-radius: 24px;
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-top: 48px;
+        }
+
+    </style>
+</head>
+
+<body>
+<header class="hui-header">
+    <div id="hui-back"></div>
+    <span class="title">新用户注册</span>
+</header>
+<div class="hui-wrap">
+    <form id="from">
+        <div class="form">
+            <div class="check">
+                <span class="hint">手机号码</span>
+                <input id="phone" name="phone" type="text" class="import" placeholder="请输入注册手机号码">
+            </div>
+            <div class="check">
+                <span class="hint">验证码</span>
+                <input type="text" class="import" placeholder="请输入短信验证码">
+                <button class="send">发送验证码</button>
+            </div>
+            <div class="check">
+                <span class="hint">登录密码</span>
+                <input id="password" name="password" type="text" class="import" placeholder="请设置6-20位登录密码">
+            </div>
+            <div class="check" style="border: none">
+                <span class="hint">确认密码</span>
+                <input type="text" class="import" placeholder="请在此之前确认密码">
+            </div>
+        </div>
+        <div class="service">
+            <div class="hui-form-radios">
+                <span>
+                    <input type="checkbox" value="1" name="abc" id="c1"
+                           onchange="showCheckRes(this);"/>
+                    <label for="c1"></label>
+                </span>
+                <div style="position: absolute;left: 48px;top: 0px;">
+                    <span style="font-size: 14px">同意《</span>
+                    <a href="javascript:hui.open('13.html');" style="color: #2439A5;font-size: 14px">用户服务协议</a>
+                    <span style="font-size: 14px">》</span>
+                </div>
+            </div>
+        </div>
+        <div onclick="AddHandlingFeeToRefund()" class="btn">注册</div>
+    </form>
+
+    <div style="width: 200px;margin:0 auto;text-align: center;">
+        <a href="javascript:hui.open('11.html');"
+           style="color: #2439A5;font: size 14px;">已有账户，立即登录</a>
+    </div>
+</div>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/chen-url.js"></script>
+<script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+hui.ready(function(){
+    $.ajax({
+		type: "get",
+		dataType: "json",
+		url: "http://139.217.12.228:12002/"+"user/get/1",
+		success: function(res) {
+			if(res.code == "200"){
+				hui.iconToast('操作成功', 'success');
+			}
+		},
+		error: function(data) {
+			hui.iconToast('操作失败', 'warn');
+		}
+	});
+});
+</script>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+*{
+    margin:0;
+    padding:0;
+    font-family:PingFangSC-Regular;
+}
+.container{
+    position: relative;
+}
+.masker{
+    z-index: 99;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.65);
+    position: absolute;
+}
+.popup{
+    border-radius:2px 2px 0px 0px;
+    position: absolute;
+    width:319px;
+    height:424px;
+    background:#ffffff;
+    z-index: 100;
+    margin-left:-160px;
+    margin-top:-210px;
+    left:50%;
+    top:37%;
+}
+.popup .top-bg{
+    font-size:18px;
+    font-weight:400;
+    height:133px;
+    background:linear-gradient(315deg,rgba(36,57,165,1) 0%,rgba(66,105,192,1) 100%);
+
+    display: flex;
+    justify-content: center;
+    color:#ffffff;
+}
+.popup .top-bg .title{
+    position: absolute;
+    top:16px;
+}
+.popup .title2{
+    font-size:14px;
+    margin:10px 16px;
+    height:30px;
+    border-bottom:1px solid #DDDDDD;
+}
+.popup .ensure{
+    margin:10px 16px;
+    font-size:14px;
+    color:#888888;
+}
+.popup .ensure span{
+    color:#108EE9;
+}
+.popup .top-bg img{
+    position: absolute;
+    left:129px;
+    top:57px;
+    width:61px;
+    height:60px;
+}
+.popup ul{
+    display: block;
+    color:#999999;
+    font-size:14px;
+    line-height:20px;
+    letter-spacing:1px;
+    margin-left: 30px;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+.popup ul li{
+    margin-bottom:9px;
+}
+.popup .ensure-btn{
+    margin:20px 16px;
+    width:287px;
+    height:47px;
+    background:rgba(36,57,165,1);
+    border-radius:24px;
+    display: flex;
+    color:#ffffff;
+    justify-content: center;
+    align-items: center;
+    font-size:18px;
+    font-weight:400;
+    letter-spacing: 1px;
+}
+.hr{
+    width:100%;
+    height:0px;
+    border-bottom:1px solid #DDDDDD;
+}

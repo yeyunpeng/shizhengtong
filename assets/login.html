@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>HUI 用户注册</title>
+    <link rel="stylesheet" type="text/css" href="./css/hui.css" />
+</head>
+<body>
+<style>
+    body{
+        background:#FFFFFF;
+    }
+    .hui-input{
+        width: 100% !important;
+        border-radius: 24px;
+        border: 1px solid rgba(217,217,217,1);
+        height: 40px;
+        line-height: 40px;
+        padding-left: 52px;
+        box-sizing: border-box;
+    }
+    .head{
+        width: 100%;
+        height: 64px;
+        background: #2439A5;
+    }
+    .bg{
+        width: 100%;
+        height:236px;
+        background: url(./img/login_BG.png) no-repeat;
+        background-size: 100% 100%;
+        margin-top: -2px;
+    }
+    .check{
+        padding: 0px 40px;
+        margin-top: 40px;
+    }
+    .hui-primary{
+        background: #2439A5 !important;
+        border-radius: 24px;
+        font-size: 18px;
+        height: 47px;
+        line-height: 47px;
+        text-align: center;
+    }
+</style>
+<div class="hui-wrap">
+    <div class="head"></div>
+    <div class="bg"></div>
+    <div class="check">
+        <div style="position: relative">
+            <img src="./img/NUB.png" alt="" style="width: 18px;height: 18px;position: absolute;left: 22px;
+                top: 50%;
+                margin-top: -20px;">
+            <input id="uasername" type="text" class="hui-input hui-input-clear" style="margin-bottom: 24px;" placeholder="请输入电话号码" checkType="string" checkData="5,20" checkMsg="用户名应为5-20个字符" />
+        </div>
+        <div style="position: relative">
+            <img src="./img/LOC.png" alt="" style="width: 14px;height: 18px;position: absolute;left: 22px;
+            top: 50%;
+            margin-top: -9px;">
+            <input id="password" type="password" class="hui-input hui-pwd-eye" placeholder="请输入密码" checkType="string" id="pwd" checkData="6,20" checkMsg="密码应为6-20个字符" />
+        </div>
+
+        <div style="height: 30px;margin-top: 16px;padding: 0px 40px;">
+            <a href="javascript:hui.open('12.html');" style="float: left;font-size:14px;color: #2439A5">注册新用户</a>
+            <a href="javascript:hui.open('14.html');" style="float: right;font-size:14px;color: #2439A5">找回密码</a>
+        </div>
+
+    </div>
+    <div style="padding:0px 40px;margin-top: 32px;">
+        <button  type="button" class="hui-button hui-button-large hui-primary" id="submit">立即登录</button>
+    </div>
+
+</div>
+<script type="text/javascript" src="./js/hui.js" charset="UTF-8"></script>
+<script type="text/javascript" src="./js/hui-form.js" charset="utf-8"></script>
+<script type="text/javascript">
+    function savePW() {
+        localStorage.setItem("uasername", hui('#uasername').val());
+        localStorage.setItem("password", hui('#password').val());
+    }
+
+//  记录账号密码
+hui.ready(function() {
+          if (localStorage.getItem("uasername") != null) {
+          hui('#uasername').val(localStorage.getItem("uasername"));
+          }
+          if (!localStorage.getItem("password") != null) {
+          hui('#password').val(localStorage.getItem("password"));
+          }
+          });
+
+
+          //  登录事件
+          hui('#submit').click(function() {
+                               
+                               //验证
+ var res = huiFormCheck('#form1');
+                               
+  if (res) {
+<!--setTimeout(function(){hui.loading(false, true);}, 500);-->
+ hui.loading('登录中');
+  login();
+   }
+                               
+    });
+// 校验账号密码
+function login(){
+    
+    var phone = hui('#uasername').val();
+    var password  = hui('#password').val();
+    var dict = {"uasername":phone, "password":password};
+    window.webkit.messageHandlers.isLogin.postMessage(dict);
+    
+    // 后台结果
+  
+}
+function isLoginCallBack(f){
+     hui.closeLoading();
+    var str = f.split('-');
+    if(str[0] == "no"){
+        hui.iconToast("账号密码错误", 'warn');
+        <!--hui.open('2.html');-->
+    } else if (str[0] == "ok" && str[1] == "yes") {
+<!--        localStorage.setItem("need", "n");-->
+        localStorage.setItem("id", str[4]); // 用户id
+        savePW();
+ window.webkit.messageHandlers.goto6.postMessage(null);
+
+    } else if (str[0] == "ok" && str[1] == "no") {
+        <!--需要认证-->
+<!--        localStorage.setItem("need", "y");-->
+        localStorage.setItem("id", str[2]); // 用户id
+        savePW();
+        hui.open('2.html?id='+str[2]);
+    }else if (str[0] == "x") {
+        hui.iconToast("网络异常！", 'warn');
+    }
+   
+}
+
+</script>
+</body>
+
+</html>

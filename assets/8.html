@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <title>HUI</title>
+            <link rel="stylesheet" type="text/css" href="./css/hui.css" />
+            <style type="text/css">
+                body {
+                    background: rgba(234, 234, 236, 1);
+                    
+                }
+            
+            .line {
+                height: 20px;
+            }
+            
+            #hui-back:before {
+                font-size: 18px;
+                color: #2439A5;
+            }
+            
+            .hui-tab-active {
+                border-bottom: 2px solid #2439A5 !important;
+                color: #2439A5;
+            }
+            
+            li {
+                height: 77px;
+            }
+            
+            p {
+                font-weight: 400;
+            }
+            
+            .hui-list-text {
+                position: relative;
+            }
+            
+            .hui-list {
+                margin: 16px;
+                border-radius: 8px;
+                position: relative;
+            }
+            
+            .title1 {
+                width: 100px;
+                height: 40px;
+                line-height: 40px;
+                position: absolute;
+                left: 50%;
+                margin-left: -50px;
+                font-size: 17px;
+                color: #fff;
+            }
+            </style>
+            </head>
+    
+    <body>
+        <header class="hui-header" style="background: #FBFBFB;">
+            <div id="hui-back" style="color: #2439A5;"></div>
+            <span style="width: 100px;height: 40px;line-height: 40px;position: absolute;left: 50%;margin-left: -50px;font-size: 17px;color: #000000;">办证指南</span>
+        </header>
+        
+        <div class="hui-wrap">
+            <div>
+                <div class="hui-list" style="margin-top:10px;" onclick="hui.open('./c1.html');">
+                    <a href="#" style="height:auto; height:60px; padding-bottom:8px;">
+                        <div class="hui-list-icons" style="width:110px; height:60px;">
+                            <img src="./img/BZZY.png" style="width:42px; margin:0px; border-radius:50%;position: absolute;
+                            left: 16px;
+                            top: 50%;
+                            margin-top: -21px;" />
+                        </div>
+                        <div class="hui-list-text" style="height:79px; line-height:50px;padding-top: 10px;margin-left: -32px;">
+                            <p style="font-family: PingFangSC-Regular;position: absolute;">
+                            普通护照签发服务指南</p>
+                            <!--                         <p style="    position: absolute;top: 16px;left: 0px;">
+                             <span style="font-size: 12px;color: #999999;">护照</span><span style="padding: 0px 8px;font-size: 12px;color: #999999;">|</span><span
+                             style="font-size: 12px;color: #999999;">签证</span>
+                             </p> -->
+                            <div class="hui-list-info" style="position: absolute;right: 0px;
+                                height: 40px;
+                                top: 45%;
+                                margin-top: -30px">
+                                <span class="hui-icons hui-icons-right"></span>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                <div class="hui-list" style="margin-top:10px;" onclick="hui.open('./c2.html');">
+                    <a href="#" style="height:auto; height:60px; padding-bottom:8px;">
+                        <div class="hui-list-icons" style="width:110px; height:60px;">
+                            <img src="./img/BZZY.png" style="width:42px; margin:0px; border-radius:50%;position: absolute;
+                            left: 16px;
+                            top: 50%;
+                            margin-top: -21px;" />
+                        </div>
+                        <div class="hui-list-text" style="height:79px; line-height:50px;padding-top: 10px;margin-left: -32px;">
+                            <p style="font-family: PingFangSC-Regular;position: absolute;">
+                            大陆居民往来港澳台地区</p>
+                            <!--                         <p style="    position: absolute;top: 16px;left: 0px;">
+                             <span style="font-size: 12px;color: #999999;">护照</span><span style="padding: 0px 8px;font-size: 12px;color: #999999;">|</span><span
+                             style="font-size: 12px;color: #999999;">签证</span>
+                             </p> -->
+                            <div class="hui-list-info" style="position: absolute;right: 0px;
+                                height: 40px;
+                                top: 45%;
+                                margin-top: -30px">
+                                <span class="hui-icons hui-icons-right"></span>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                <div class="hui-list" style="margin-top:10px;" onclick=" hui.open('./c3.html');"> <a href="#" style="height:auto; height:60px; padding-bottom:8px;">
+                    <div class="hui-list-icons" style="width:110px; height:60px;">
+                        <img src="./img/BZZY.png" style="width:42px; margin:0px; border-radius:50%;position: absolute;
+                        left: 16px;
+                        top: 50%;
+                        margin-top: -21px;" />
+                    </div>
+                    <div class="hui-list-text" style="height:79px; line-height:50px;padding-top: 10px;margin-left: -32px;">
+                        <p style="font-family: PingFangSC-Regular;position: absolute;">
+                        前往港澳通行证签发服务指南</p>
+                        <!--                         <p style="    position: absolute;top: 16px;left: 0px;">
+                         <span style="font-size: 12px;color: #999999;">护照</span><span style="padding: 0px 8px;font-size: 12px;color: #999999;">|</span><span
+                         style="font-size: 12px;color: #999999;">签证</span>
+                         </p> -->
+                        <div class="hui-list-info" style="position: absolute;right: 0px;
+                            height: 40px;
+                            top: 45%;
+                            margin-top: -30px">
+                            <span class="hui-icons hui-icons-right"></span>
+                        </div>
+                    </div>
+                    
+                </a>
+                </div>
+                
+                <div class="hui-list" style="margin-top:10px;" onclick="hui.open('./c4.html');">
+                    <a href="#" style="height:auto; height:60px; padding-bottom:8px;">
+                        <div class="hui-list-icons" style="width:110px; height:60px;">
+                            <img src="./img/BZZY.png" style="width:42px; margin:0px; border-radius:50%;position: absolute;
+                            left: 16px;
+                            top: 50%;
+                            margin-top: -21px;" />
+                        </div>
+                        <div class="hui-list-text" style="height:79px; line-height:50px;padding-top: 10px;margin-left: -32px;">
+                            <p style="font-family: PingFangSC-Regular;position: absolute;">
+                            驾驶证介绍</p>
+                            <!--                         <p style="    position: absolute;top: 16px;left: 0px;">
+                             <span style="font-size: 12px;color: #999999;">护照</span><span style="padding: 0px 8px;font-size: 12px;color: #999999;">|</span><span
+                             style="font-size: 12px;color: #999999;">签证</span>
+                             </p> -->
+                            <div class="hui-list-info" style="position: absolute;right: 0px;
+                                height: 40px;
+                                top: 45%;
+                                margin-top: -30px">
+                                <span class="hui-icons hui-icons-right"></span>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                
+                <div class="hui-list" style="margin-top:10px;" onclick="hui.open('./c5.html');">
+                    <a href="#" style="height:auto; height:60px; padding-bottom:8px;">
+                        <div class="hui-list-icons" style="width:110px; height:60px;">
+                            <img src="./img/BZZY.png" style="width:42px; margin:0px; border-radius:50%;position: absolute;
+                            left: 16px;
+                            top: 50%;
+                            margin-top: -21px;" />
+                        </div>
+                        <div class="hui-list-text" style="height:79px; line-height:50px;padding-top: 10px;margin-left: -32px;">
+                            <p style="font-family: PingFangSC-Regular;position: absolute;">
+                            行驶证介绍</p>
+                            <!--                         <p style="    position: absolute;top: 16px;left: 0px;">
+                             <span style="font-size: 12px;color: #999999;">护照</span><span style="padding: 0px 8px;font-size: 12px;color: #999999;">|</span><span
+                             style="font-size: 12px;color: #999999;">签证</span>
+                             </p> -->
+                            <div class="hui-list-info" style="position: absolute;right: 0px;
+                                height: 40px;
+                                top: 45%;
+                                margin-top: -30px">
+                                <span class="hui-icons hui-icons-right"></span>
+                            </div>
+                        </div>
+                        
+                    </a>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        
+        <script src="./js/jquery.min.js"></script>
+        <script src="js/fastclick.js"></script>
+        <script>
+            $(function() {
+              FastClick.attach(document.body);
+              });
+            </script>
+        
+        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+    </body>
+    
+</html>
+

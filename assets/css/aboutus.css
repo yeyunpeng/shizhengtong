@@ -1,0 +1,61 @@
+body {
+    background: #FFFFFF;
+    width: 100vw;
+    height: 100vh;
+}
+
+.info {
+    margin-top: 56px;
+    flex-direction: column;
+}
+
+.info img {
+    width: 78px;
+    height: 78px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 13px;
+}
+
+.info span {
+    display: block;
+    text-align: center;
+
+}
+
+.info .title {
+    font-weight: 500;
+    font-size: 18px;
+    color: #333333;
+    line-height: 26px;
+}
+
+.info .slogan {
+    margin-top: 8px;
+    font-size: 14px;
+    color: rgba(102, 102, 102, 1);
+    line-height: 22px;
+}
+
+.detail span {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    color: rgba(51, 51, 51, 1);
+    line-height: 22px;
+}
+
+.detail {
+    margin-top: 38vh;
+}
+.detail span:nth-child(2){
+    margin-bottom: 16px;
+}
+.detail .name {
+    color: rgba(102, 102, 102, 1);
+    line-height: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 6px;
+}

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <title>注册</title>
+            <link rel="stylesheet" type="text/css" href="./css/hui.css" />
+            <style type="text/css">
+                body {
+                    background: #EAEAEC;
+                    padding: 0px;
+                    margin: 0px;
+                }
+            
+            .title {
+                width: 200px;
+                height: 40px;
+                line-height: 40px;
+                position: absolute;
+                left: 50%;
+                margin-left: -100px;
+                font-size: 17px;
+                color: #000000;
+                
+            }
+            
+            #hui-back:before {
+                color: #2439A5;
+            }
+            
+            .hui-header {
+                background: #FFF;
+            }
+            
+            .form {
+                width: 100%;
+                background: #FFFFFF;
+                margin-top: 16px;
+            }
+            
+            .check {
+                height: 49px;
+                line-height: 49px;
+                border-bottom: 1px solid #EAEAEC;
+                margin-left: 20px;
+                box-sizing: border-box;
+                position: relative;
+            }
+            
+            .hint {
+                font-size: 14px;
+                color: #666666;
+            }
+            
+            .import {
+                border: 0px;
+                position: absolute;
+                left: 80px;
+                height: 30px;
+                width: 200px;
+                top: 50%;
+                margin-top: -15px;
+                font-size: 14px;
+            }
+            
+            .send {
+                position: absolute;
+                width: 70px;
+                height: 24px;
+                right: 16px;
+                top: 50%;
+                margin-top: -12px;
+                line-height: 24px;
+                text-align: center;
+                border: 1px solid #2439A5;
+                color: #2439A5;
+                border-radius: 2px;
+                font-size: 12px;
+                background: #fff;
+            }
+            
+            .service {
+                height: 20px;
+                padding-left: 20px;
+                margin-top: 16px;
+                position: relative;
+            }
+            
+            .btn {
+                background: #2439A5;
+                text-align: center;
+                margin: 16px;
+                height: 47px;
+                line-height: 47px;
+                border-radius: 24px;
+                font-size: 18px;
+                color: #FFFFFF;
+                margin-top: 48px;
+            }
+            </style>
+            </head>
+    
+    <body>
+        <header class="hui-header">
+            <div id="hui-back"></div>
+            <span class="title">新用户注册</span>
+        </header>
+        <div class="hui-wrap">
+            <form id="from">
+                <div class="form" id="form1">
+                    <div class="check">
+                        <span class="hint">手机号码</span>
+                        <input id="phone" name="phone" type="text" class="import" checkType="phone" checkMsg="手机号码格式错误" placeholder="请输入注册手机号码">
+                            </div>
+                    <div class="check">
+                        <span class="hint">验证码</span>
+                        <input id="code" type="text" class="import" placeholder="请输入短信验证码" checkType="reg" checkData="^\d{6,6}$" checkMsg="验证码应该为6个数字">
+                            <button onclick="getcode()" class="send">发送验证码</button>
+                            </div>
+                    <div class="check">
+                        <span class="hint">登录密码</span>
+                        <input id="pwd" name="password" type="password" class="import" placeholder="请设置6-20位登录密码" checkType="string"
+                            checkData="6,20" checkMsg="密码应为6-20个字符">
+                            </div>
+                    <div class="check" style="border: none">
+                        <span class="hint">确认密码</span>
+                        <input type="password" class="import" placeholder="请在此之前确认密码" checkType="sameWithId" checkData="pwd" checkMsg="两次密码不一致">
+                            </div>
+                </div>
+                <div class="service">
+                    <div class="hui-form-radios">
+                        <span>
+                            <input class="ckck" checked="checked" type="checkbox" value="1" name="abc" id="c1" />
+                            <label for="c1"></label>
+                        </span>
+                        <div style="position: absolute;left: 48px;top: 0px;">
+                            <span style="font-size: 14px">同意《</span>
+                            <a href="javascript:hui.open('13.html');" style="color: #2439A5;font-size: 14px">用户服务协议</a>
+                            <span style="font-size: 14px">》</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="submit" class="btn">注册</div>
+            </form>
+            
+            <div style="width: 200px;margin:0 auto;text-align: center;">
+                <a href="javascript:hui.Back();" style="color: #2439A5;font: size 14px;">已有账户，立即登录</a>
+            </div>
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="js/fastclick.js"></script>
+        <script>
+            $(function() {
+              FastClick.attach(document.body);
+              });
+            </script>
+        <script src="./js/store.js"></script>
+        <script src="./js/chen-url.js"></script>
+        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/hui-form.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            hui('#submit').click(function() {
+                                 if (!($('.ckck').is(':checked'))) {
+                                 hui.iconToast('请同意用户服务协议！', 'warn');
+                                 return false;
+                                 }
+                                 
+                                 //验证
+                                 var res = huiFormCheck('#form1');
+                                 
+                                 if (!res) {
+                                 hui.iconToast('请填写完整信息！', 'warn');
+                                 return false;
+                                 }
+                                 
+                                 if ($("#code").val() != localStorage.getExpire("yzm")) {
+                                 hui.iconToast('验证码错误！', 'warn');
+                                 return false;
+                                 }
+                                 if ($("#phone").val() != localStorage.getExpire("rphone")) {
+                                 hui.iconToast('验证码错误！', 'warn');
+                                 return false;
+                                 }
+                                 
+                                 var phone = hui('#phone').val();
+                                 var password = hui('#pwd').val();
+                                 
+                                 var dict = {"uasername":phone, "password":password};
+                                 var f = window.webkit.messageHandlers.Reg.postMessage(dict);
+                                 
+                                 
+                                 <!--hui.iconToast($('#form1').serialize(), 'warn');-->
+                                 <!--//提交-->
+                                 <!--if (res) {-->
+                                 <!--hui.iconToast('验证通过！');-->
+                                 <!--$.ajax({-->
+                                            <!--type: "POST",-->
+                                            <!--url: address + "user/reg",-->
+                                            <!--dataType:"json",-->
+                                            <!--data: $('#form1').serialize(),-->
+                                            <!--success: function(res) {-->
+                                            <!--if (res.code == 200) {-->
+                                            <!--hui.iconToast('操作成功', 'success');-->
+                                            <!--hui.open('login.html');-->
+                                            <!--}-->
+                                            <!--},-->
+                                            <!--error: function(data) {-->
+                                            <!--hui.iconToast('操作失败', 'warn');-->
+                                            <!--}-->
+                                            <!--});-->
+                                 <!--}-->
+                                 });
+                                 
+                                 
+                                 
+                                 var countdown = 60;
+                                 $('.send').on('click', function() {
+                                               if ($("#phone").val() == "" || $("#phone").val() == null) {
+                                               return false;
+                                               }
+                                               var obj = $(".send");
+                                               settime(obj);
+                                               })
+                                               
+                                               function settime(obj) { //发送验证码倒计时
+                                                   if (countdown == 0) {
+                                                       obj.attr('disabled', false);
+                                                       //obj.removeattr("disabled");
+                                                       obj.html("获取验证码");
+                                                       countdown = 60;
+                                                       return;
+                                                   } else {
+                                                       obj.attr('disabled', true);
+                                                       obj.html(countdown + 's');
+                                                       countdown--;
+                                                   }
+                                                   setTimeout(function() {
+                                                              settime(obj)
+                                                              }, 1000)
+                                               };
+        
+        // 获取验证码
+        
+        function getcode() {
+            var phone = $("#phone").val();
+            if (!(/^1[3456789]\d{9}$/.test(phone))) {
+                hui.iconToast('手机号码有误，请重填！');
+                return false;
+            }
+            if (phone == "") {
+                hui.iconToast('请先输入手机号码！', 'warn');
+            }
+            // 获取手机号码
+            $.ajax({
+                   type: "POST",
+                   dataType: "json",
+                   url: address + "user/getCode",
+                   beforeSend: function(XMLHttpRequest) {
+                   XMLHttpRequest.setRequestHeader("phone", phone);
+                   },
+                   success: function(res) {
+                   if (res.code == 200) {
+                   localStorage.setExpire("yzm", res.data.code, 1000 * 60 * 5);
+                   localStorage.setExpire("rphone", res.data.phone, 1000 * 60 * 5);
+                   
+                   } else if (res.code == 8888) {
+                   hui.iconToast('验证码时效未过，请不要频繁获取验证码！', 'warn');
+                   }
+                   },
+                   error: function(data) {
+                   hui.iconToast('操作失败' + data.code, 'warn');
+                   }
+                   });
+        }
+        function RegCallBack(f){
+            if (f == 200) {
+                hui.iconToast("注册成功！", 'success');
+                hui.open('login.html');
+            } else if (f == 401) {
+                hui.iconToast("注册失败，手机号已被使用！", 'warn');
+            } else {
+                hui.iconToast("注册失败，请重新注册！", 'warn');
+            }
+        }
+        </script>
+    </body>
+    
+</html>
