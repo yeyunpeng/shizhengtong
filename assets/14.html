@@ -175,6 +175,7 @@
                                            var f = window.webkit.messageHandlers.setPwd.postMessage(dict);
                                            
                                            
+                                           
                                            <!--hui.iconToast($('#form1').serialize(), 'warn');-->
                                            <!--//提交-->
                                            <!--if (res) {-->
@@ -202,6 +203,15 @@
                                            var countdown = 60;
                                            $('.send').on('click', function() {
                                                          if ($("#phone").val() == "" || $("#phone").val() == null) {
+                                                         return false;
+                                                         }
+                                                         var phone = $("#phone").val();
+                                                         if (!(/^1[3456789]\d{9}$/.test(phone))) {
+                                                         hui.iconToast('手机号码有误，请重填！', 'warn');
+                                                         return false;
+                                                         }
+                                                         if (phone == "") {
+                                                         hui.iconToast('请先输入手机号码！', 'warn');
                                                          return false;
                                                          }
                                                          var obj = $(".send");

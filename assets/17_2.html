@@ -95,6 +95,14 @@
                        success: function(data) {
                        if (data.code == 200) {
                        hui.iconToast("修改成功", 'success');
+                       localStorage.removeItem("num");
+                       localStorage.removeItem("photo");
+                       //localStorage.removeItem("id");
+                       localStorage.removeItem("name");
+                       localStorage.removeItem("uasername");
+                       localStorage.removeItem("password");
+                       localStorage.removeItem("need");
+                       localStorage.removeItem("rphone");
                        window.webkit.messageHandlers.goLoginBack.postMessage(null);
                        } else {
                        hui.iconToast(data.data, 'success');

@@ -32,195 +32,288 @@
             </head>
     
     <body>
-        <img class='c1' src="./img/sao.png" alt="" onclick="gotoActivity();">
-            <div class="id-container">
-                <header>
-                    <img onclick="javascript:hui.open('15.html');" class='personal' src="./img/personal.png" alt="个人图标">
-                        <h1>世证通
-                        </h1>
-                        <div class="extra"><span class="weather">让身份登记更方便</span></div>
-                        </header>
-                <main>
-                    <div class='er-code'><img id="photo" alt="二维码"></div>
-                    <div class="information">
-                        <div id="name" class="name" style="color: #FFFFFF;"></div>
-                        <div class="content">
-                            <div class="title" style="color: #FFFFFF;">身份证号</div>
-                            <div id="num" style="color: #FFFFFF;"></div>
-                        </div>
-                        <div class='content'>
-                            <div class="title" style="color: #FFFFFF;">出生日期</div>
-                            <div id="birthday" style="color: #FFFFFF;"></div>
-                        </div>
+        <!-- <img class='c1' src="./img/sao.png" alt="" onclick="gotoActivity();"> -->
+        <div class="id-container">
+            <header>
+                <img onclick="javascript:hui.open('15.html');" class='personal' src="./img/personal.png" alt="个人图标">
+                    <h1>世证通
+                    </h1>
+                    <div class="extra"><span class="weather">让身份登记更方便</span></div>
+                    </header>
+            <main>
+                <div class='er-code'><img id="photo" alt="二维码"></div>
+                <div class="information">
+                    <div id="name" class="name" style="color: #FFFFFF;"></div>
+                    <div class="content">
+                        <div class="title" style="color: #FFFFFF;">身份证号</div>
+                        <div id="num" style="color: #FFFFFF;font-size: 12px;">622726199304282052</div>
                     </div>
-                    <div class="tag">
-                        身份证
+                    <div class='content'>
+                        <div class="title" style="color: #FFFFFF;">出生日期</div>
+                        <div id="birthday" style="color: #FFFFFF;font-size: 12px;">1994年4月28日</div>
                     </div>
-                </main>
-                <nav>
-                    <ul class="row">
-                        <li onclick="javascript:hui.open(('7.html?photo='+hui('#photo').attr('src')+'+&name='+GetQueryString('name')+'&num='+GetQueryString('num')));"
-                            class="item"><img src="./img/id_card.png" alt="">
-                                <div class="name">身份证</div>
-                                </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">因公电子护照</div>
-                            </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">因私电子护照</div>
-                            </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">港澳通行证</div>
-                            </li>
-                    </ul>
-                    <ul class="row">
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">驾驶证</div>
-                            </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">行车证</div>
-                            </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">因公电子护照</div>
-                            </li>
-                        <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/more.png" alt="">
-                            <div class="name">期待更多</div>
-                            </li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="service-container" style='position: relative;'>
-                <div style='position: absolute;left:45px;top:40px;width:160px;color:#2439A5'>
-                    <div>世证通App上线啦</div>
-                    <div style='font-size:9px;margin-top:5px'>世证在手，让身份登记变得更加简单</div>
-                    <div style='margin-top:20px;background:#EB9B30;color:white;width:71px;height:20px;border-radius:11px;font-size:10px;text-align: center;line-height: 20px'>查看详情</div>
                 </div>
-                <img onclick="go()" src="./img/banner-x.png" alt="" style="width:100%">
-                    </div>
-            <!--<div class="service-container">-->
-            <!--<div class="content">-->
-            <!--<div class="title">便民服务</div>-->
-            <!--<div class="nav-box">-->
-            <!--<div class="nav-item"><img src="./img/home_cxfw.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">出行服务</div>-->
-            <!--<div class="kind">火车高铁 | 飞机轮船</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Euros.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">酒店住宿</div>-->
-            <!--<div class="kind">商务酒店 | 经济民宿</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/home_wdfu.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">网点服务</div>-->
-            <!--<div class="kind">公安警力 | 移民局</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Icon (2).png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">交通管理</div>-->
-            <!--<div class="kind">机动车 | 驾驶证</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Icon.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">出入境服务</div>-->
-            <!--<div class="kind">预约申请 | 再次签注</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/home_wgrfw.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">外国人业务</div>-->
-            <!--<div class="kind">居留许可 | 住宿登记</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div onclick="clearData()" class="clear-data"><span>测试H5支付</span></div>-->
-            
-            <!--&lt;!&ndash;<div onclick="javascript:hui.open('15.html');" class="clear-data"><span>个人中心</span></div>&ndash;&gt;-->
-            <!--</div>-->
-            <script src="./js/jquery.min.js"></script>
-            <script src="js/fastclick.js"></script>
-            <script>
-                $(function() {
-                  FastClick.attach(document.body);
-                  });
-                </script>
-            <script type="text/javascript" src="./js/jquery.min.js" charset="UTF-8"></script>
-            <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
-            <script src="./js/util.js" type="text/javascript" charset="utf-8"></script>
-            <script type="text/javascript">
-                function go() {
-                    hui.open('banner.html');
-                }
-            
-            //拦截安卓回退按钮，调用H5的返回方法
-<!--            history.pushState(null, null, location.href);-->
-<!--            window.addEventListener('popstate', function(event) {-->
-<!--                                    history.pushState(null, null, location.href);-->
-<!--                                    // GoBackUrl();H5自己定义的返回方法确定-->
-<!--                                    hui.confirm('<h4 style="font-size:18px;">确定退出应用吗？', ['取消', '确定'],-->
-<!--                                                function() {-->
-<!--                                                nativeMethod.over();-->
-<!--                                                },-->
-<!--                                                function() {});-->
-<!--                                    });-->
-                                    
-                                    function clearData() {
-                                        <!--&lt;!&ndash;localStorage.clear();&ndash;&gt;-->
-                                        <!--localStorage.removeItem("15500000000");-->
-                                        <!--localStorage.removeItem("16600000000");-->
-                                        <!--localStorage.removeItem("17700000000");-->
-                                        <!--localStorage.removeItem("18800000000");-->
-                                        <!--localStorage.removeItem("19900000000");-->
-                                        <!--localStorage.removeItem("uasername");-->
-                                        <!--localStorage.removeItem("password");-->
-                                        <!--nativeMethod.clear();-->
-                                        <!--hui.open('1.html');-->
-                                        
-                                        <!--nativeMethod.wxPay("1", "1");-->
-                                        
-                                        hui.open(
-                                                 "https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241"
-                                                 );
-                                    }
-            
-            hui.ready(function() {
-                      hui('#name').html(GetQueryString("name"));
-                      hui('#num').html(GetQueryString("num"));
-                      
-                      
-                      localStorage.setItem("name", GetQueryString("name")); // 用户姓名
-                      localStorage.setItem("num", GetQueryString("num")); // 用户身份证号码
-                      
-                      var birthday = get_Birthday_from_idcard(GetQueryString("num"));
-                      hui('#birthday').html(birthday);
-                      <!--hui.iconToast("连接获取111："+localStorage.getItem("id"), 'warn');-->
-                      <!--hui.iconToast(localStorage.getItem("id"), 'warn');-->
-                      });
-                      
-                      function gotoActivity() {
-                          window.webkit.messageHandlers.Scan.postMessage(null);
-                      }
-            
-            function GetQueryString(name) {
-                var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                var r = window.location.search.substr(1).match(reg);
-                if (r != null) return decodeURI(r[2]);
-                return null;
-            }
-            
-            function aa(path) {
-                hui('#photo').attr('src', "data:image/jpg;base64," + path);
-                localStorage.setItem("path", path); // 用户照片
-            }
+                <div class="tag">
+                    身份证
+                </div>
+            </main>
+            <nav>
+                <ul class="row">
+                    <li onclick="javascript:hui.open(('7.html?photo='+hui('#photo').attr('src')+'+&name='+GetQueryString('name')+'&num='+GetQueryString('num')));"
+                        class="item"><img src="./img/id_card.png" alt="">
+                            <div class="name">身份证</div>
+                            </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
+                        <div class="name">因公电子护照</div>
+                        </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
+                        <div class="name">因私电子护照</div>
+                        </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
+                        <div class="name">港澳通行证</div>
+                        </li>
+                </ul>
+                <ul class="row">
+                    <!--                     <li onclick="javascript:checkJSZ();" class="item"><img id="jsz_have" src="./img/plus.png" alt="">
+                     <div class="name">驾驶证</div>
+                     </li>
+                     <li onclick="javascript:checkXSZ();" class="item"><img src="./img/plus.png" alt="">
+                     <div class="name">行车证</div>
+                     </li> -->
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img id="jsz_have" src="./img/plus.png" alt="">
+                        <div class="name">驾驶证</div>
+                        </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
+                        <div class="name">行车证</div>
+                        </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/plus.png" alt="">
+                        <div class="name">因公电子护照</div>
+                        </li>
+                    <li onclick="javascript:hui.open('8.html');" class="item"><img src="./img/more.png" alt="">
+                        <div class="name">期待更多</div>
+                        </li>
+                </ul>
+            </nav>
+        </div>
+        
+        <div class="service-container" style='position: relative;'>
+            <div style='position: absolute;left:45px;top:40px;width:160px;color:#2439A5'>
+                <div>世证通App上线啦</div>
+                <div style='font-size:9px;margin-top:5px'>世证在手，让身份登记变得更加简单</div>
+                <div style='margin-top:20px;background:#EB9B30;color:white;width:71px;height:20px;border-radius:11px;font-size:10px;text-align: center;line-height: 20px'>查看详情</div>
+            </div>
+            <img onclick="go()" src="./img/banner-x.png" alt="" style="width:100%">
+                </div>
+        
+        <div onclick="gotoActivity();" style="z-index:999;bottom:0;position:fixed;width:100%;height:47px;font-size:18px;background:#2439A5;color:#ffffff;display: flex;justify-content: center;align-items: center">
+            <div>
+                <!-- <button type="button" class="hui-button hui-button-large" style="margin-top:15px;"><span class="hui-icons hui-icons-warn"></span>图标按钮</button> -->
+                <img style="width:16px;height:16px;" src="./img/scan.png" />
+                <span class="hui-icons" style="color: white;font-size: 16px;font-weight: bolder;">扫一扫</span>
+            </div>
+        </div>
+        <!--<div class="service-container">-->
+        <!--<div class="content">-->
+        <!--<div class="title">便民服务</div>-->
+        <!--<div class="nav-box">-->
+        <!--<div class="nav-item"><img src="./img/home_cxfw.png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">出行服务</div>-->
+        <!--<div class="kind">火车高铁 | 飞机轮船</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="nav-item"><img src="./img/Euros.png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">酒店住宿</div>-->
+        <!--<div class="kind">商务酒店 | 经济民宿</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="nav-item"><img src="./img/home_wdfu.png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">网点服务</div>-->
+        <!--<div class="kind">公安警力 | 移民局</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="nav-item"><img src="./img/Icon (2).png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">交通管理</div>-->
+        <!--<div class="kind">机动车 | 驾驶证</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="nav-item"><img src="./img/Icon.png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">出入境服务</div>-->
+        <!--<div class="kind">预约申请 | 再次签注</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div class="nav-item"><img src="./img/home_wgrfw.png" alt="">-->
+        <!--<div class="nc">-->
+        <!--<div class="name">外国人业务</div>-->
+        <!--<div class="kind">居留许可 | 住宿登记</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div onclick="clearData()" class="clear-data"><span>测试H5支付</span></div>-->
+        
+        <!--&lt;!&ndash;<div onclick="javascript:hui.open('15.html');" class="clear-data"><span>个人中心</span></div>&ndash;&gt;-->
+        <!--</div>-->
+        <script src="./js/jquery.min.js"></script>
+        <script src="js/fastclick.js"></script>
+        <script>
+            $(function() {
+              FastClick.attach(document.body);
+              });
             </script>
-            </body>
+        <script src="js/chen-url.js"></script>
+        <script type="text/javascript" src="./js/jquery.min.js" charset="UTF-8"></script>
+        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/util.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+            function go() {
+                hui.open('banner.html');
+            }
+        
+        function checkJSZ() {
+            // 解决驾驶证
+            hui.postJSON(
+                         address + "service/jsz/one", {
+                         uid: localStorage.getItem("id")
+                         },
+                         function(obj) {
+                         if (obj.code == 200) {
+                         // 缓存驾驶证数据
+                         localStorage.setItem("firstIssueDate", obj.data.firstIssueDate);
+                         localStorage.setItem("licenseClass", obj.data.licenseClass);
+                         localStorage.setItem("validFrom", obj.data.validFrom); // 有效起始时间
+                         localStorage.setItem("licenseData", parseInt(obj.data.validTo.substring(0, 4)) - parseInt(obj.data.validFrom.substring(
+                                                                                                                                                0, 4))); // 有效期
+                         localStorage.setItem("licenseStatus", obj.data.licenseStatus);
+                         hui.open('jsz.html');
+                         } else {
+                         // 设置要跳转到认证页面
+                         hui.open("jsz_reg.html")
+                         }
+                         }
+                         );
+        }
+        
+        function checkXSZ() {
+            // 解决驾驶证
+            hui.getJSON(
+                        address + "service/xsz/one", {
+                        uid: localStorage.getItem("id")
+                        },
+                        function(obj) {
+                        if (obj.code == 200) {
+                        // 缓存驾驶证数据
+                        hui.open('xsz.html');
+                        } else {
+                        // 设置要跳转到认证页面
+                        hui.open('xsz_reg.html');
+                        }
+                        }
+                        );
+        }
+        <!--            //拦截安卓回退按钮，调用H5的返回方法-->
+        <!--            history.pushState(null, null, location.href);-->
+        <!--            window.addEventListener('popstate', function(event) {-->
+                                                <!--                history.pushState(null, null, location.href);-->
+                                                <!--                // GoBackUrl();H5自己定义的返回方法确定-->
+                                                <!--                hui.confirm('<h4 style="font-size:18px;">确定退出应用吗？', ['取消', '确定'],-->
+                                                                                <!--                    function() {-->
+                                                                                <!--                        nativeMethod.over();-->
+                                                                                <!--                    },-->
+                                                                                <!--                    function() {});-->
+                                                <!--            });-->
+                                                
+                                                function clearData() {
+                                                    <!--&lt;!&ndash;localStorage.clear();&ndash;&gt;-->
+                                                    <!--localStorage.removeItem("15500000000");-->
+                                                    <!--localStorage.removeItem("16600000000");-->
+                                                    <!--localStorage.removeItem("17700000000");-->
+                                                    <!--localStorage.removeItem("18800000000");-->
+                                                    <!--localStorage.removeItem("19900000000");-->
+                                                    <!--localStorage.removeItem("uasername");-->
+                                                    <!--localStorage.removeItem("password");-->
+                                                    <!--nativeMethod.clear();-->
+                                                    <!--hui.open('1.html');-->
+                                                    
+                                                    <!--nativeMethod.wxPay("1", "1");-->
+                                                    
+                                                    hui.open(
+                                                             "https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241"
+                                                             );
+                                                }
+        
+        hui.ready(function() {
+                  hui('#name').html(GetQueryString("name"));
+                  hui('#num').html(GetQueryString("num"));
+                  
+                  
+                  localStorage.setItem("name", GetQueryString("name")); // 用户姓名
+                  localStorage.setItem("num", GetQueryString("num")); // 用户身份证号码
+                  
+                  // 获取当前用户所有信息
+                  //                 hui.getJSON(
+                  //                     address + 'user/get/' + localStorage.getItem("id"),
+                  //                     function(obj) {
+                  //                         localStorage.setItem("idNumber", obj.data.idNumber);
+                  //                         localStorage.setItem("address", obj.data.address);
+                  //                         localStorage.setItem("contry", obj.data.contry);
+                  //
+                  //                         // hui.toast('读取用户信息' + localStorage.getItem("idNumber") + "," + localStorage.getItem("address"));
+                  //                     },
+                  //                     function(e) {
+                  //                         hui.iconToast('读取用户信息失败，请退出后重新登录', 'warn');
+                  //                     }
+                  //                 );
+                  
+                  var birthday = get_Birthday_from_idcard(GetQueryString("num"));
+                  hui('#birthday').html(birthday);
+                  <!--hui.iconToast("连接获取111："+localStorage.getItem("id"), 'warn');-->
+                  <!--hui.iconToast(localStorage.getItem("id"), 'warn');-->
+                  
+                  if (GetQueryString("pass") == "y") {
+                  localStorage.setItem("need", "n");
+                  } else {
+                  localStorage.setItem("need", "y");
+                  }
+                  
+                  // 是否有驾驶证
+                  // hui.postJSON(
+                  //     address + "service/jsz/one", {
+                  //         uid: localStorage.getItem("id")
+                  //     },
+                  //     function(obj) {
+                  //         if (obj.code == 200) {
+                  //             // 缓存驾驶证数据
+                  //             // hui.iconToast('有驾驶证', 'warn');
+                  //             $("#jsz_have").attr('src', "./img/icon/jsz_have.png");
+                  //         }
+                  //     },
+                  //     function(e) {}
+                  // );
+                  <!--hui.iconToast("人脸识别结果"+GetQueryString("pass"), 'warn');-->
+                  });
+                  
+                  function gotoActivity() {
+                      window.webkit.messageHandlers.Scan.postMessage(null);
+                  }
+        
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return decodeURI(r[2]);
+            return null;
+        }
+        
+        function aa(path) {
+            hui('#photo').attr('src', "data:image/jpg;base64," + path);
+            localStorage.setItem("path", path); // 用户照片
+        }
+        </script>
+    </body>
     
 </html>
 

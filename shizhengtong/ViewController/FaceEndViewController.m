@@ -11,10 +11,8 @@
 #import<JavaScriptCore/JavaScriptCore.h>
 #import "SaoMaViewController.h"
 #import "ViewController.h"
-
-#define  HT "http://chenyongpeng.xyz"
-//#define  HT "http://1o669531n3.imwork.net:42997"
-#define  FACE "https://182.50.124.210:9121/api"
+#import "DetectionViewController.h"
+#import "HttpUtils.h"
 @interface FaceEndViewController ()<WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate>
 @property (strong, nonatomic) JSContext *context;
 @property (nonatomic ,strong)WKUserContentController * userCC;
@@ -53,8 +51,8 @@
     [self.userCC addScriptMessageHandler:self name:@"Scan"];
     [self.userCC addScriptMessageHandler:self name:@"goLoginBack"];
     [self.userCC addScriptMessageHandler:self name:@"updatePhone"];
-    
-    
+    [self.userCC addScriptMessageHandler:self name:@"setPwd"];
+    [self.userCC addScriptMessageHandler:self name:@"goFkBack"];
 }
 
    
@@ -67,6 +65,8 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message
 {
     if([message.name isEqualToString:@"Scan"]){
+//        DetectionViewController *d=[[DetectionViewController alloc]init];
+//        [d postREgMessageceshi];
     SaoMaViewController *s=[[SaoMaViewController alloc]init];
     UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:s];
     navi.navigationBarHidden = true;
@@ -82,7 +82,7 @@
         // 创建 URL
           NSLog(@"%@",message.body);
         NSLog(@"%@-%@-%@",phone,password,idstr);
-        NSString *Str=[NSString stringWithFormat:@"%s/user/updatePhone?",HT];
+        NSString *Str=[NSString stringWithFormat:@"%@/user/updatePhone",HttpUtils.getHttpMsg];
         NSString *Str2=[NSString stringWithFormat:@"id=%@&password=%@&phone=%@",idstr,password,phone];
         NSLog(@"url****:%@",Str);
         
@@ -96,34 +96,37 @@
         
         // 创建任务 task
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-            NSString *sign=[[NSString alloc]init];
-            if(data!=NULL){
-                int sign=0;
-                NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+         
+            NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+              int sign2=0;
+            if(strJson!=NULL){
+          
+              
+               
                 
                 if([[strJson valueForKey:@"code"]intValue]==401){
-                    sign=-2;
+                    sign2=-2;
                     
                 }
                 else if([[strJson valueForKey:@"code"]intValue]==200){
                     
-                    sign=1;
+                    sign2=1;
                 }
                 else if([[strJson valueForKey:@"code"]intValue]==400){
-                    sign=-1;
+                    sign2=-1;
                 }
                 else if([[strJson valueForKey:@"code"]intValue]==404){
-                    sign=-3;
+                    sign2=-3;
                 }
-                else{sign=-100;
+                else{sign2=-100;
                     NSLog(@"aaaaaaaa4");
                 }
                
                 
             }
             
-            NSString *js = [NSString stringWithFormat:@"updatePhoneCallBack('%@')",sign];
+            NSString *js = [NSString stringWithFormat:@"updatePhoneCallBack('%d')",sign2];
             // NSLog(@"%@", js);
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
@@ -136,21 +139,75 @@
         //启动任务
         [task resume];
     }
+    //改密码
+    if([message.name isEqualToString:@"setPwd"]){
+        NSObject *obj = (NSObject*)message.body;
+        NSString *uasername=[obj valueForKey:@"uasername"];
+        NSString *password=[obj valueForKey:@"password"];
+        NSURLSession *session = [NSURLSession sharedSession];
+        // 创建 URL
+        
+        NSString *Str=[NSString stringWithFormat:@"%@/user/resetPwd",HttpUtils.getHttpMsg];
+        NSString *Str2=[NSString stringWithFormat:@"password=%@&phone=%@",password,uasername];
+        NSLog(@"url****:%@",Str);
+        
+        NSURL *url = [NSURL URLWithString:Str];
+        // 创建 request
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        // 请求方法
+        request.HTTPMethod = @"POST";
+        //            // 请求体
+        request.HTTPBody = [Str2 dataUsingEncoding:NSUTF8StringEncoding];
+        
+        // 创建任务 task
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            int sign=0;
+            NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+            if(strJson!=NULL){
+                
+                
+                if([[strJson valueForKey:@"code"]intValue]==200){
+                    sign=1;}
+                
+                else if([[strJson valueForKey:@"code"]intValue]==400){
+                    sign=2;}
+                else if([[strJson valueForKey:@"code"]intValue]==401){
+                    sign=3;}
+            }else{sign=0;}
+            NSString *js = [NSString stringWithFormat:@"setPwdCallBack('%d')",sign];
+            // NSLog(@"%@", js);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+                    
+                }];
+                
+            });
+        }];
+        //启动任务
+        [task resume];
+    }
     if([message.name isEqualToString:@"goLoginBack"]){
-          NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
+        NSUserDefaults *userDefaults=[NSUserDefaults standardUserDefaults];
         [userDefaults removeObjectForKey:@"id"];
         [userDefaults removeObjectForKey:@"num"];
         [userDefaults removeObjectForKey:@"name"];
         [userDefaults removeObjectForKey:@"photo"];
-//        [userDefaults removeObjectForKey:@"phone"];
-//        [userDefaults removeObjectForKey:@"password"];
+        [userDefaults removeObjectForKey:@"phone"];
+        [userDefaults removeObjectForKey:@"password"];
         [userDefaults synchronize];
         ViewController* welc = [[ViewController alloc] init];
         UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:welc];
         navi.navigationBarHidden = true;
-        
+       
         
         [self presentViewController:navi animated:YES completion:nil];
+        
+    }
+    if([message.name isEqualToString:@"goFkBack"]){
+    
+          [self.webView goBack];
+        
     }
     
 }
@@ -254,5 +311,14 @@
     
     [self presentViewController:alertController animated:YES completion:nil];
 }
-
+//最后， VC销毁的时候一定要把handler移除
+-(void)dealloc
+{
+    
+    [self.config.userContentController removeScriptMessageHandlerForName:@"setPwd"];
+    [self.config.userContentController removeScriptMessageHandlerForName:@"updatePhone"];
+    [self.config.userContentController removeScriptMessageHandlerForName:@"Scan"];
+  
+    [self.config.userContentController removeScriptMessageHandlerForName:@"goLoginBack"];
+}
 @end

@@ -1,220 +1,235 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-	<title>HUI</title>
-	<link rel="stylesheet" type="text/css" href="./css/hui.css" />
-    <style type="text/css">
-		body {
-			background: #FFF;
-		}
-
-		.line {
-			height: 20px;
-		}
-
-		/* 添加/修改样式 */
-		.hui-header {
-			background: #2439A5;
-		}
-
-		.hui-header h1 {
-			font-size: 17px;
-		}
-
-		.identity {
-			height: 220px;
-			background: #2439A5;
-			padding: 16px;
-			box-sizing: border-box;
-			text-align: center;
-		}
-
-		.identity img {
-			width: 130px;
-			height: 130px;
-			margin: 0 auto;
-			<!--border-radius: 50%;-->
-			<!--border: 10px solid rgba(255, 255, 255, 0.11);-->
-			<!--margin-top: 12px;-->
-		}
-
-		.scan {
-			height: 300px;
-			background: #ffffff;
-			border-radius: 28px 28px 0px 0px;
-			margin-top: -26px;
-			padding-right: 20px;
-			padding-left: 20px;
-		}
-		.particulars {
-			position: relative;
-			margin-top: 28px;
-		}
-		.authentication{
-			height: 22px;
-			line-height: 22px;
-    		position: relative;
-		}
-		.authentication span {
-			color: #333333;
-			display: inline-block;
-			font-size: 18px;
-		}
-
-		.identity_text {
-			position: absolute;
-			height: 18px;
-			line-height: 18px;
-			left: 25px;
-    		top: 50%;
-    		margin-top: -9px;
-		}
-
-		.identity_num {
-			width: 202px;
-			position: absolute;
-			height: 18px;
-			line-height: 18px;
-			right: 0px;
-    		top: 50%;
-    		margin-top: -9px;
-		}
-
-		.details {
-			margin-top: 16px;
-			margin-left: 25px;
-			position: relative;
-		}
-
-		.details span {
-			display: block;
-			color: #333333;
-			font-size: 16px;
-		}
-
-		.details .details_tit {
-			font-size: 13px;
-    		color: #999999;
-			margin-top: 16px;
-			margin-bottom: 4px;
-		}
-
-		.details div span {
-			font-size: 15px;
-		}
-
-		.details div .office {
-			display: inline-block;
-			width: 202px;
-			position: absolute;
-			right: 0px;
-		}
-		.title{
-			width: 100px;
-			height: 40px;
-			line-height: 40px;
-			position: absolute;
-			left: 50%;
-			margin-left: -50px;
-			font-size: 17px;
-			color: #fff;
-		}
-		.authentication_img{
-			position: absolute;
-			width: 18px;
-			height: 18px;
-			line-height: 18px;
-			left: 0px;
-    		top: 50%;
-    		margin-top: -10px;
-		}
-		.identity_imga{
-			width: 110px;
-    height: 110px;
-    margin: 0 auto;
-    margin-top: 12px;
-    overflow: hidden;
-    border-radius: 50%;
-    border: 10px solid rgba(255, 255, 255, 0.11);
-		}
-	</style>
-</head>
-
-<body>
-<header class="hui-header">
-	<div id="hui-back"></div>
-	<span class="title">身份证</span>
-</header>
-<div class="hui-wrap">
-	<div class="identity">
-	<div class="identity_imga">
-		<img id="photo" alt="">
-	</div>
-	</div>
-	<div class="scan">
-		<div class="particulars">
-			<div class="authentication">
-				<span class="authentication_img"><img style="width: 100%;height: 100%;" src="./img/SFZ.png" alt=""></span>
-				<span class="identity_text">身份证</span>
-				<span class="identity_num" id="num">110222********2291</span>
-
-			</div>
-			<div class="details">
-				<span id="name">卢悦溪</span>
-				<div>
-						<span style="display: inline-block">
-							<span class="details_tit">性别</span>
-							<span id="sex">女</span>
-						</span>
-					<span class="office">
-							<span class="details_tit">民族</span>
-							<span>汉</span>
-						</span>
-					<span class="details_tit">出生</span>
-					<span id="birthday" style="display: inline-block">2000.01.01</span>
-					<span class="details_tit">地址</span>
-					<span id="address" style="display: inline-block">北京市朝阳区酒仙桥街道花家地南里313-1-1102</span>
-				</div>
-			</div>
-		</div>
-	</div>
-
-</div>
-<script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
-<script src="./js/util.js" type="text/javascript" charset="utf-8"></script>
-<script>
-	hui.ready(function(){
-  		hui('#name').html(GetQueryString("name"));
-  		hui('#num').html(GetQueryString("num"));
-
-  		<!--hui('#photo').attr('src',GetQueryString("photo"));-->
-
-  		var iIdNo = GetQueryString("num");
-  		var sex = get_sex_from_idcard(iIdNo);
-		var birthday = get_Birthday_from_idcard(iIdNo);
-		var address = get_province_from_idcard(iIdNo) + "-" + get_only_city_from_idcard(iIdNo) + "-" + get_only_county_from_idcard(iIdNo);
-
-		hui('#sex').html(sex);
-		hui('#birthday').html(birthday);
-		hui('#address').html(address);
-  	});
-
-	 function GetQueryString(name) {
-			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-			var r = window.location.search.substr(1).match(reg);
-			if(r != null) return decodeURI(r[2]);
-			return null;
-		}
-
-	function  aa(path){
-			hui('#photo').attr('src',"data:image/jpg;base64,"+path);
-
-		}
-</script>
-
-</body>
-
+    
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <title>HUI</title>
+            <link rel="stylesheet" type="text/css" href="./css/hui.css" />
+            <style type="text/css">
+                body {
+                    background: #FFF;
+                }
+            
+            .line {
+                height: 20px;
+            }
+            
+            /* 添加/修改样式 */
+            .hui-header {
+                background: #2439A5;
+            }
+            
+            .hui-header h1 {
+                font-size: 17px;
+            }
+            
+            .identity {
+                height: 220px;
+                background: #2439A5;
+                padding: 16px;
+                box-sizing: border-box;
+                text-align: center;
+            }
+            
+            .identity img {
+                width: 130px;
+                height: 130px;
+                margin: 0 auto;
+                < !--border-radius: 50%;
+                -->< !--border: 10px solid rgba(255, 255, 255, 0.11);
+                -->< !--margin-top: 12px;
+                -->
+            }
+            
+            .scan {
+                height: 300px;
+                background: #ffffff;
+                border-radius: 28px 28px 0px 0px;
+                margin-top: -26px;
+                padding-right: 20px;
+                padding-left: 20px;
+            }
+            
+            .particulars {
+                position: relative;
+                margin-top: 28px;
+            }
+            
+            .authentication {
+                height: 22px;
+                line-height: 22px;
+                position: relative;
+            }
+            
+            .authentication span {
+                color: #333333;
+                display: inline-block;
+                font-size: 18px;
+            }
+            
+            .identity_text {
+                position: absolute;
+                height: 18px;
+                line-height: 18px;
+                left: 25px;
+                top: 50%;
+                margin-top: -9px;
+            }
+            
+            .identity_num {
+                width: 202px;
+                position: absolute;
+                height: 18px;
+                line-height: 18px;
+                right: 0px;
+                top: 50%;
+                margin-top: -9px;
+            }
+            
+            .details {
+                margin-top: 16px;
+                margin-left: 25px;
+                position: relative;
+            }
+            
+            .details span {
+                display: block;
+                color: #333333;
+                font-size: 16px;
+            }
+            
+            .details .details_tit {
+                font-size: 13px;
+                color: #999999;
+                margin-top: 16px;
+                margin-bottom: 4px;
+            }
+            
+            .details div span {
+                font-size: 15px;
+            }
+            
+            .details div .office {
+                display: inline-block;
+                width: 202px;
+                position: absolute;
+                right: 0px;
+            }
+            
+            .title {
+                width: 100px;
+                height: 40px;
+                line-height: 40px;
+                position: absolute;
+                left: 50%;
+                margin-left: -50px;
+                font-size: 17px;
+                color: #fff;
+            }
+            
+            .authentication_img {
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                line-height: 18px;
+                left: 0px;
+                top: 50%;
+                margin-top: -10px;
+            }
+            
+            .identity_imga {
+                width: 110px;
+                height: 110px;
+                margin: 0 auto;
+                margin-top: 12px;
+                overflow: hidden;
+                border-radius: 50%;
+                border: 10px solid rgba(255, 255, 255, 0.11);
+            }
+            </style>
+            </head>
+    
+    <body>
+        <header class="hui-header">
+            <div id="hui-back"></div>
+            <span class="title">身份证</span>
+        </header>
+        <div class="hui-wrap">
+            <div class="identity">
+                <div class="identity_imga">
+                    <img id="photo" alt="">
+                        </div>
+            </div>
+            <div class="scan">
+                <div class="particulars">
+                    <div class="authentication">
+                        <span class="authentication_img"><img style="width: 100%;height: 100%;" src="./img/SFZ.png" alt=""></span>
+                        <span class="identity_text">身份证</span>
+                        <span class="identity_num" id="num">110222********2291</span>
+                        
+                    </div>
+                    <div class="details">
+                        <span id="name">卢悦溪</span>
+                        <div>
+                            <span style="display: inline-block">
+                                <span class="details_tit">性别</span>
+                                <span id="sex">女</span>
+                            </span>
+                            <span class="office">
+                                <span class="details_tit">民族</span>
+                                <span></span>
+                            </span>
+                            <span class="details_tit">出生</span>
+                            <span id="birthday" style="display: inline-block">2000.01.01</span>
+                            <span class="details_tit">地址</span>
+                            <span id="address" style="display: inline-block">北京市朝阳区酒仙桥街道花家地南里313-1-1102</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <script src="./js/jquery.min.js"></script>
+        <script src="js/fastclick.js"></script>
+        <script>
+            $(function() {
+              FastClick.attach(document.body);
+              });
+            </script>
+        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+        <script src="./js/util.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+            hui.ready(function() {
+                      hui('#name').html(GetQueryString("name"));
+                      hui('#num').html(GetQueryString("num"));
+                      
+                      <!--hui('#photo').attr('src',GetQueryString("photo"));-->
+                      
+                      var iIdNo = GetQueryString("num");
+                      var sex = get_sex_from_idcard(iIdNo);
+                      var birthday = get_Birthday_from_idcard(iIdNo);
+                      var address = get_province_from_idcard(iIdNo);
+                      
+                      hui('#sex').html(sex);
+                      hui('#birthday').html(birthday);
+                      hui('#address').html(address);
+                      });
+                      
+                      function GetQueryString(name) {
+                          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                          var r = window.location.search.substr(1).match(reg);
+                          if (r != null) return decodeURI(r[2]);
+                          return null;
+                      }
+        
+        function aa(path) {
+            hui('#photo').attr('src', "data:image/jpg;base64," + path);
+            
+        }
+        </script>
+        
+    </body>
+    
 </html>
+

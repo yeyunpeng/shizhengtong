@@ -17,9 +17,11 @@
 		0497831C230175BA0095E1EE /* fanhui@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0497831B230175BA0095E1EE /* fanhui@2x.png */; };
 		0497831F230177B30095E1EE /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497831E230177B30095E1EE /* ScanResultViewController.m */; };
 		0497832B230A79A60095E1EE /* DeviceUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0497832A230A79A60095E1EE /* DeviceUtils.m */; };
-		04978330230A989A0095E1EE /* 1.crt in Resources */ = {isa = PBXBuildFile; fileRef = 0497832F230A98990095E1EE /* 1.crt */; };
 		04ED11422313D8E0005326AA /* assets in Resources */ = {isa = PBXBuildFile; fileRef = 04ED11412313D8E0005326AA /* assets */; };
 		04ED114B23162B3A005326AA /* IDLFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04ED114A23162B39005326AA /* IDLFaceSDK.framework */; };
+		04F360492322464500E551F0 /* HttpUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F360482322464500E551F0 /* HttpUtils.m */; };
+		04F3604C2332263E00E551F0 /* FaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04F3604B2332263E00E551F0 /* FaceViewController.m */; };
+		04F89EAD2317F21700200CA4 /* hcr.crt in Resources */ = {isa = PBXBuildFile; fileRef = 04F89EAC2317F21700200CA4 /* hcr.crt */; };
 		DA563D3B218707FA0090C103 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA563D3A218707FA0090C103 /* AppDelegate.m */; };
 		DA563D41218707FA0090C103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA563D3F218707FA0090C103 /* Main.storyboard */; };
 		DA563D43218707FC0090C103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA563D42218707FC0090C103 /* Assets.xcassets */; };
@@ -70,9 +72,13 @@
 		0497831E230177B30095E1EE /* ScanResultViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
 		04978329230A79A60095E1EE /* DeviceUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceUtils.h; sourceTree = "<group>"; };
 		0497832A230A79A60095E1EE /* DeviceUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeviceUtils.m; sourceTree = "<group>"; };
-		0497832F230A98990095E1EE /* 1.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.crt; sourceTree = "<group>"; };
 		04ED11412313D8E0005326AA /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = assets; sourceTree = "<group>"; };
 		04ED114A23162B39005326AA /* IDLFaceSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = IDLFaceSDK.framework; sourceTree = "<group>"; };
+		04F360472322464500E551F0 /* HttpUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HttpUtils.h; sourceTree = "<group>"; };
+		04F360482322464500E551F0 /* HttpUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HttpUtils.m; sourceTree = "<group>"; };
+		04F3604A2332263D00E551F0 /* FaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FaceViewController.h; sourceTree = "<group>"; };
+		04F3604B2332263E00E551F0 /* FaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FaceViewController.m; sourceTree = "<group>"; };
+		04F89EAC2317F21700200CA4 /* hcr.crt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = hcr.crt; sourceTree = "<group>"; };
 		DA563D36218707FA0090C103 /* shizhengtong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shizhengtong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA563D39218707FA0090C103 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA563D3A218707FA0090C103 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -160,8 +166,8 @@
 		DA563D2D218707FA0090C103 = {
 			isa = PBXGroup;
 			children = (
+				04F89EAC2317F21700200CA4 /* hcr.crt */,
 				04ED11412313D8E0005326AA /* assets */,
-				0497832F230A98990095E1EE /* 1.crt */,
 				0497831B230175BA0095E1EE /* fanhui@2x.png */,
 				04978314230173350095E1EE /* LCQRCodeUtil */,
 				049781C822F839350095E1EE /* FaceSDK */,
@@ -224,6 +230,8 @@
 			children = (
 				DA563D7621870BE80090C103 /* ImageUtils.m */,
 				DA563D7721870BE80090C103 /* ImageUtils.h */,
+				04F360472322464500E551F0 /* HttpUtils.h */,
+				04F360482322464500E551F0 /* HttpUtils.m */,
 				04978329230A79A60095E1EE /* DeviceUtils.h */,
 				0497832A230A79A60095E1EE /* DeviceUtils.m */,
 			);
@@ -242,6 +250,8 @@
 		DA563D7B21870BE80090C103 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				04F3604A2332263D00E551F0 /* FaceViewController.h */,
+				04F3604B2332263E00E551F0 /* FaceViewController.m */,
 				DA563D8121870BE80090C103 /* DetectionViewController.h */,
 				DA563D7C21870BE80090C103 /* DetectionViewController.m */,
 				DA563D8221870BE80090C103 /* FaceBaseViewController.h */,
@@ -372,13 +382,13 @@
 			files = (
 				DA563D46218707FC0090C103 /* LaunchScreen.storyboard in Resources */,
 				DA563D43218707FC0090C103 /* Assets.xcassets in Resources */,
-				04978330230A989A0095E1EE /* 1.crt in Resources */,
 				04ED11422313D8E0005326AA /* assets in Resources */,
 				049781CE22F839360095E1EE /* idl-license.face-ios in Resources */,
 				DA563D41218707FA0090C103 /* Main.storyboard in Resources */,
 				0497831C230175BA0095E1EE /* fanhui@2x.png in Resources */,
 				049781D022F839360095E1EE /* com.baidu.idl.face.faceSDK.bundle in Resources */,
 				049781CF22F839360095E1EE /* com.baidu.idl.face.model.bundle in Resources */,
+				04F89EAD2317F21700200CA4 /* hcr.crt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -409,12 +419,14 @@
 				0497830822FBC7370095E1EE /* FaceEndViewController.m in Sources */,
 				DA563D8C21870BE80090C103 /* ViewController.m in Sources */,
 				04978319230173350095E1EE /* LCQrcodeUtil.m in Sources */,
+				04F360492322464500E551F0 /* HttpUtils.m in Sources */,
 				DA563D49218707FC0090C103 /* main.m in Sources */,
 				DA563D3B218707FA0090C103 /* AppDelegate.m in Sources */,
 				0497831F230177B30095E1EE /* ScanResultViewController.m in Sources */,
 				0497831A230173350095E1EE /* SaoMaViewController.m in Sources */,
 				DA563D8821870BE80090C103 /* DetectionViewController.m in Sources */,
 				DA563D8621870BE80090C103 /* ImageUtils.m in Sources */,
+				04F3604C2332263E00E551F0 /* FaceViewController.m in Sources */,
 				DA563D8921870BE80090C103 /* FaceBaseViewController.m in Sources */,
 				0497832B230A79A60095E1EE /* DeviceUtils.m in Sources */,
 			);
@@ -589,8 +601,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TJ73VF5632;
+				DEVELOPMENT_TEAM = ACJTG2XP8Y;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -598,7 +611,7 @@
 					"$(PROJECT_DIR)/shizhengtong/Frameworks/FaceSDK",
 				);
 				INFOPLIST_FILE = shizhengtong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +619,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hcr_ElecidentManage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -616,8 +630,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TJ73VF5632;
+				DEVELOPMENT_TEAM = ACJTG2XP8Y;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -625,7 +640,7 @@
 					"$(PROJECT_DIR)/shizhengtong/Frameworks/FaceSDK",
 				);
 				INFOPLIST_FILE = shizhengtong/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -633,6 +648,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = hcr_ElecidentManage;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

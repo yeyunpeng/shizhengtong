@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8">
             <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <title>HUI</title>
+            <title>扫描结果</title>
             <link rel="stylesheet" type="text/css" href="./css/hui.css" />
             <style type="text/css">
                 body {
@@ -119,10 +119,7 @@
             </head>
     
     <body>
-        <header class="hui-header">
-            <!--<div onClick="gotoActivity()" id="hui-back"></div>-->
-            <span class="title">扫描结果</span>
-        </header>
+
         <div class="hui-wrap">
             <div class="tit_bar" id="h_name">贵阳大酒店</div>
             <div class="message">
@@ -145,11 +142,11 @@
                 <span class="message_left">付费金额</span>
                 <span id="h_monery" class="message_right">0.00元</span>
             </div>
-            <div onClick="gotoActivity()" class="btn">微信</div>
+            <div id="ev" class="btn">提交</div>
             
             <!-- 遮罩层 -->
-            <div class="shade show"></div>
-            <div class="hint show">你的实名信息已经推送到实名认证系统，酒店管理人员确认信息后即可开始办理酒店入住手续。</div>
+            <!--<div class="shade show"></div>-->
+            <!--<div class="hint show">你的实名信息已经推送到实名认证系统，酒店管理人员确认信息后即可开始办理酒店入住手续。</div>-->
         </div>
         <script src="./js/jquery.min.js"></script>
         <script src="js/fastclick.js"></script>
@@ -162,85 +159,120 @@
         <script src="./js/chen-url.js"></script>
         <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
         <script>
-            var je = 0;
-            var htype = 0;
-            hui.ready(function() {
-                      
-                      <!--$.ajax({-->
-                                 <!--type: 'post',-->
-                                 <!--url: testHttel,-->
-                                 <!--data: {id:GetQueryString("id")},-->
-                                 <!--dataType: 'jsonp',-->
-                                 <!--success: function (data) {-->
-                                 <!--console.log(msg);-->
-                                 <!--hui('#h_name').html(msg.h_name);-->
-                                 <!--hui('#h_code').html(msg.h_code);-->
-                                 <!--hui('#h_address').html(msg.h_address);-->
-                                 <!--hui('#h_monery').html(msg.h_monery);-->
-                                 <!--},-->
-                                 <!--error: function (data) {-->
-                                 <!--hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');-->
-                                 <!--}-->
-                                 <!--});-->
-                      
-                      <!--hui('#content').html(GetQueryString("id"));-->
-                      // 根据酒店id查询
-                      
-                      if (GetQueryString("id") == "000000000000") {
-                      hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');
-                      } else {
-                      hui.postJSON(
-                                   testHttel, {
-                                   id: GetQueryString("id")
-                                   },
-                                   function(msg) {
-                                   je = msg.h_monery;
-                                   htype = msg.h_type;
-                                   hui('#h_name').html(msg.h_name);
-                                   hui('#h_code').html(msg.h_code);
-                                   hui('#h_address').html(msg.h_address);
-                                   hui('#h_monery').html(msg.h_monery);
-                                   },
-                                   function(e) {
-                                   hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');
-                                   }
-                                   );
-                      }
-                      
-                      
-                      
-                      <!--hui.iconToast(localStorage.getItem("id"), 'warn');-->
-                      <!--$.ajax({-->
-                                 <!--type: "get",-->
-                                 <!--dataType: "json",-->
-                                 <!--url: address + "user/getCode?uid=" + localStorage.getItem("id")-->
-                                 <!--});-->
-                      
-                      
-                      document.querySelector('.shade').classList.remove("show");
-                      document.querySelector('.hint').classList.remove("show");
-                      
-                      setInterval(function() {
-                                  document.querySelector('.shade').classList.add("show");
-                                  document.querySelector('.hint').classList.add("show");
-                                  }, 2000);
-                      
-                      
-                      
-                      
-                      });
-                      
-                      function GetQueryString(name) {
-                          var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-                          var r = window.location.search.substr(1).match(reg);
-                          if (r != null) return decodeURI(r[2]);
-                          return null;
-                      }
+            hui('#ev').click(function() {
+                             // if (hui(this).buttonIsLoading()) {
+                             //     return false;
+                             // }
+                             // hui(this).loadingButton('加载中...');
+                             // setTimeout(function() {
+                             //     hui('#ev').resetLoadingButton();
+                             // }, 2000);
+                             
+                             var hid = GetQueryString("id");
+                             if (je != 0) {
+                             window.webkit.messageHandlers.goBackmian.postMessage(null);
+<!--                             nativeMethod.wxPay(localStorage.getItem("id"), hid, je, htype);-->
+                             } else {
+                             hui.alert('提交成功！', '好的', function() {
+                                       window.webkit.messageHandlers.goBackmian.postMessage(null);
+<!--                                       nativeMethod.freeScan(localStorage.getItem("id"), hid, htype)-->
+                                       });
+                             
+                             }
+                             });
+                             var je = 0;
+                             var htype = 0;
+                             hui.ready(function() {
+                                       
+                                       <!--$.ajax({-->
+                                                  <!--type: 'post',-->
+                                                  <!--url: testHttel,-->
+                                                  <!--data: {id:GetQueryString("id")},-->
+                                                  <!--dataType: 'jsonp',-->
+                                                  <!--success: function (data) {-->
+                                                  <!--console.log(msg);-->
+                                                  <!--hui('#h_name').html(msg.h_name);-->
+                                                  <!--hui('#h_code').html(msg.h_code);-->
+                                                  <!--hui('#h_address').html(msg.h_address);-->
+                                                  <!--hui('#h_monery').html(msg.h_monery);-->
+                                                  <!--},-->
+                                                  <!--error: function (data) {-->
+                                                  <!--hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');-->
+                                                  <!--}-->
+                                                  <!--});-->
+                                       
+                                       <!--hui('#content').html(GetQueryString("id"));-->
+                                       // 根据酒店id查询
+                                       
+                                       if (GetQueryString("id") == "000000000000") {
+                                       hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');
+                                       } else {
+                                       hui.postJSON(
+                                                    testHttel, {
+                                                    id: GetQueryString("id")
+                                                    },
+                                                    function(msg) {
+                                                    je = msg.h_monery;
+                                                    htype = msg.h_type;
+                                                    hui('#h_name').html(msg.h_name);
+                                                    hui('#h_code').html(msg.h_code);
+                                                    hui('#h_address').html(msg.h_address);
+                                                    hui('#h_monery').html((msg.h_monery / 100) + " 元");
+                                                    
+                                                    if (je == 0) {
+                                                    hui('#ev').html('免费提交');
+                                                    } else {
+                                                    hui('#ev').html('微信支付');
+                                                    }
+                                                    },
+                                                    function(e) {
+                                                    hui.iconToast('获取酒店信息失败，请重新扫描！', 'warn');
+                                                    }
+                                                    );
+                                       }
+                                       
+                                       
+                                       <!--hui.iconToast(localStorage.getItem("id"), 'warn');-->
+                                       <!--$.ajax({-->
+                                                  <!--type: "get",-->
+                                                  <!--dataType: "json",-->
+                                                  <!--url: address + "user/getCode?uid=" + localStorage.getItem("id")-->
+                                                  <!--});-->
+                                       
+                                       
+                                       <!--document.querySelector('.shade').classList.remove("show");-->
+                                       <!--document.querySelector('.hint').classList.remove("show");-->
+                                       
+                                       <!--setInterval(function() {-->
+                                                       <!--document.querySelector('.shade').classList.add("show");-->
+                                                       <!--document.querySelector('.hint').classList.add("show");-->
+                                                       <!--}, 2000);-->
+                                       
+                                       });
+                                       
+                                       function GetQueryString(name) {
+                                           var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+                                           var r = window.location.search.substr(1).match(reg);
+                                           if (r != null) return decodeURI(r[2]);
+                                           return null;
+                                       }
         
         function gotoActivity() {
             var hid = GetQueryString("id");
-<!--            nativeMethod.wxPay(localStorage.getItem("id"), hid, je, htype);-->
-            window.webkit.messageHandlers.goBack.postMessage(null);
+            if (je != 0) {
+                nativeMethod.wxPay(localStorage.getItem("id"), hid, je, htype);
+            } else {
+                hui.alert('免费提交！', '好的', function() {
+                          
+                          window.webkit.messageHandlers.goBackmian.postMessage(null);
+<!--                          nativeMethod.freeScan(localStorage.getItem("id"), hid, htype)-->
+                          });
+                          
+            }
+        }
+        function back() {
+            
+           window.webkit.messageHandlers.goBackmian.postMessage(null);
         }
         </script>
         

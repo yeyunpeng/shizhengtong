@@ -12,4 +12,5 @@
 @interface DetectionViewController : FaceBaseViewController
 @property (retain,nonatomic) WKWebView *animaView;
 @property NSData *dic;
+- (void)postREgMessageceshi;
 @end

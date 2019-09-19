@@ -12,9 +12,10 @@
 #import<JavaScriptCore/JavaScriptCore.h>
 #import "FaceEndViewController.h"
 #import "DeviceUtils.h"
+#import "HttpUtils.H"
 //#define  HT "http://1o669531n3.imwork.net:42997"
-#define  HT "http://chenyongpeng.xyz"
-#define  FACE "https://182.50.124.210:9121/api"
+//#define  HT "http://chenyongpeng.xyz"
+//#define  FACE "https://182.50.124.210:9121/api"
 
 @interface ViewController ()<WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate>
 @property (strong, nonatomic) JSContext *context;
@@ -56,9 +57,9 @@
     [self.userCC addScriptMessageHandler:self name:@"Reg"];
     [self.userCC addScriptMessageHandler:self name:@"setPwd"];
     [self.userCC addScriptMessageHandler:self name:@"goto6"];
-     [self.userCC addScriptMessageHandler:self name:@"goLoginBack"];
-  
- 
+    [self.userCC addScriptMessageHandler:self name:@"goLoginBack"];
+    [self.userCC addScriptMessageHandler:self name:@"updatePhone"];
+    [self.userCC addScriptMessageHandler:self name:@"goFkBack"];
     //此处相当于监听了JS中callFunction这个方法
     
    // [self.userCC addScriptMessageHandler:self name:@"callFunction"];
@@ -76,8 +77,13 @@
  
 //
     //这个回调里面， message.name代表方法名（‘本例为 callFunction’）， message.body代表JS给我们传过来的参数
-if (message.body != nil) {
+
         //NSObject *obj = (NSObject*)message.body;
+    if([message.name isEqualToString:@"goFkBack"]){
+        
+        [self.webView goBack];
+        
+    }
         if([message.name isEqualToString:@"isLogin"])
         {
             
@@ -86,8 +92,8 @@ if (message.body != nil) {
               NSString *password=[obj valueForKey:@"password"];
             NSURLSession *session = [NSURLSession sharedSession];
             // 创建 URL
-
-            NSString *Str=[NSString stringWithFormat:@"%s/user/login",HT];
+            
+            NSString *Str=[NSString stringWithFormat:@"%@/user/login",HttpUtils.getHttpMsg];
             NSString *Str2=[NSString stringWithFormat:@"password=%@&phone=%@&",password,uasername];
             
             NSLog(@"url****:%@",Str);
@@ -103,10 +109,10 @@ if (message.body != nil) {
             // 创建任务 task
             NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
                 NSString *sign=[[NSString alloc]init];
-                if(data!=NULL){
+                NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                NSLog(@"wwww%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+                if(strJson!=NULL){
                     self.dataStr=data;
-                    NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                    NSLog(@"wwww%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
                     NSString* strJsonData=[strJson valueForKey:@"data"];
                      NSString* strJsonDataId=[strJsonData valueForKey:@"id"];
                     NSString* strJsonDataname=[strJsonData valueForKey:@"name"];
@@ -119,6 +125,10 @@ if (message.body != nil) {
                         }else{
                             if([[strJsonData valueForKey:@"status"]integerValue]==0){
                                 sign=[sign stringByAppendingFormat:@"ok-no-%@",strJsonDataId];
+                                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                                [userDefaults setObject: [strJsonData valueForKey:@"phone"] forKey:@"phone"];
+                                [userDefaults setObject: [strJsonData valueForKey:@"password"] forKey:@"password"];
+                                 [userDefaults synchronize];
                             }else{
                             sign=[sign stringByAppendingFormat:@"ok-yes-%@-%@-%@",strJsonDataname,strJsonDatanum,strJsonDataId];
                                 NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
@@ -165,7 +175,7 @@ if (message.body != nil) {
         NSURLSession *session = [NSURLSession sharedSession];
         // 创建 URL
        
-        NSString *Str=[NSString stringWithFormat:@"%s/user/reg",HT];
+        NSString *Str=[NSString stringWithFormat:@"%@/user/reg",HttpUtils.getHttpMsg];
         NSString *Str2=[NSString stringWithFormat:@"password=%@&phone=%@&macid=%@&imei1=%@&imei2=%@&imsi1=%@&imsi2=%@&androidid=%@&deviceinfo=%@",password,uasername,NULL,NULL,NULL,NULL,NULL, DeviceUtils.getUUID,DeviceUtils.getDeviceName];
         NSLog(@"url****:%@",Str);
         
@@ -180,9 +190,9 @@ if (message.body != nil) {
         // 创建任务 task
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
            int sign=0;
-            if(data!=NULL){
-                NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+            NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+            if(strJson!=NULL){
                 
                 if([[strJson valueForKey:@"code"]intValue]==401){
                     sign=401;
@@ -226,7 +236,7 @@ if (message.body != nil) {
         NSURLSession *session = [NSURLSession sharedSession];
         // 创建 URL
         
-        NSString *Str=[NSString stringWithFormat:@"%s/user/resetPwd",HT];
+        NSString *Str=[NSString stringWithFormat:@"%@/user/resetPwd",HttpUtils.getHttpMsg];
         NSString *Str2=[NSString stringWithFormat:@"password=%@&phone=%@",password,uasername];
         NSLog(@"url****:%@",Str);
         
@@ -241,9 +251,10 @@ if (message.body != nil) {
         // 创建任务 task
         NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
             int sign=0;
-            if(data!=NULL){
-                NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-                NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+            NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+            if(strJson!=NULL){
+               
                 
                 if([[strJson valueForKey:@"code"]intValue]==200){
                     sign=1;}
@@ -305,7 +316,72 @@ if (message.body != nil) {
         [self presentViewController:navi animated:YES completion:nil];
     }
 
-        }
+    if([message.name isEqualToString:@"updatePhone"]){
+        NSObject *obj = (NSObject*)message.body;
+        NSString *phone=[obj valueForKey:@"phone"];
+        NSString *password=[obj valueForKey:@"password"];
+        NSString *idstr=[obj valueForKey:@"id"];
+        NSURLSession *session = [NSURLSession sharedSession];
+        // 创建 URL
+        NSLog(@"%@",message.body);
+        NSLog(@"%@-%@-%@",phone,password,idstr);
+        NSString *Str=[NSString stringWithFormat:@"%@/user/updatePhone",HttpUtils.getHttpMsg];
+        NSString *Str2=[NSString stringWithFormat:@"id=%@&password=%@&phone=%@",idstr,password,phone];
+        NSLog(@"url****:%@",Str);
+        
+        NSURL *url = [NSURL URLWithString:Str];
+        // 创建 request
+        NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+        // 请求方法
+        request.HTTPMethod = @"POST";
+        //            // 请求体
+        request.HTTPBody = [Str2 dataUsingEncoding:NSUTF8StringEncoding];
+        
+        // 创建任务 task
+        NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+            NSString *sign=[[NSString alloc]init];
+            NSString* strJson=[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",[NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil]);
+               int sign2=0;
+            if(strJson!=NULL){
+                
+             
+                
+                
+                if([[strJson valueForKey:@"code"]intValue]==401){
+                    sign2=-2;
+                     NSLog(@"aaaaaaaa4");
+                }
+                else if([[strJson valueForKey:@"code"]intValue]==200){
+                    
+                    sign2=1;
+                }
+                else if([[strJson valueForKey:@"code"]intValue]==400){
+                    sign2=-1;
+                }
+                else if([[strJson valueForKey:@"code"]intValue]==404){
+                    sign2=-3;
+                }
+                else{sign2=-100;
+                   
+                }
+                
+                
+            }
+            
+            NSString *js = [NSString stringWithFormat:@"updatePhoneCallBack('%d')",sign2];
+             NSLog(@"%@", js);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.webView evaluateJavaScript:js completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+                     NSLog(@"==%@----%@",data, error);
+                    // NSLog(@"js get version 2");
+                }];
+                
+            });
+        }];
+        //启动任务
+        [task resume];
+    }
    
    
 }
@@ -314,7 +390,7 @@ if (message.body != nil) {
 -(void)dealloc
 {
     
-    [self.config.userContentController removeScriptMessageHandlerForName:@"isLogin"];
+     [self.config.userContentController removeScriptMessageHandlerForName:@"isLogin"];
      [self.config.userContentController removeScriptMessageHandlerForName:@"Camera"];
      [self.config.userContentController removeScriptMessageHandlerForName:@"Reg"];
      [self.config.userContentController removeScriptMessageHandlerForName:@"setPwd"];

@@ -12,8 +12,7 @@
 #import<JavaScriptCore/JavaScriptCore.h>
 #import "FaceEndViewController.h"
 #import "ViewController.h"
-//#define  HT "http://1o669531n3.imwork.net:42997"
-#define  HT "http://chenyongpeng.xyz"
+#import "HttpUtils.h"
 #include "iconv.h"
 
 @interface DetectionViewController ()<WKNavigationDelegate,WKScriptMessageHandler,WKUIDelegate>
@@ -22,6 +21,8 @@
 @property(strong,nonatomic) WKWebViewConfiguration *config;
 @property NSData *imgData;
 @property NSString *base64String;
+@property NSString *postBase64String;
+@property int biaoshi;
 
 
 @end
@@ -95,39 +96,17 @@
                 if (images[@"bestImage"] != nil && [images[@"bestImage"] count] != 0) {
                    
                
-                   NSData *data= [DetectionViewController resetSizeOfImageData:image maxSize:5];
+                   NSData *data= [DetectionViewController resetSizeOfImageData:image maxSize:20];
                     
                     NSString *Stru = [[data base64EncodedStringWithOptions:0]  stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
                     self.base64String = [Stru stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
-                  
-                   
+                   //self.base64String = Stru;
+                    self.postBase64String=Stru;
+                    NSLog(@"333:%@",self.base64String);
                 }
-       //[self postREgMessageceshi];
-                 // 保存用户名， 下次自动填充用户名
-
-                [self persistent];
-                //向后台发送信息
-                [self postREgMessage];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [UIView animateWithDuration:0.5 animations:^{
-                        weakSelf.animaView.alpha = 1;
-                    } completion:^(BOOL finished) {
-                        [UIView animateWithDuration:0.5 animations:^{
-                            weakSelf.animaView.alpha = 1;
-                        } completion:^(BOOL finished) {
-                             [weakSelf closeAction];
-                            
-                                 UIViewController* fatherViewController = weakSelf.presentingViewController;
-                            FaceEndViewController* dvc = [[FaceEndViewController alloc]init];
-
-                            dvc.peopleDic=self.dic;
-                             dvc.photo=self.base64String;
-                            [fatherViewController presentViewController:dvc animated:YES completion:nil];
-
-                        }];
-                    }];
-                  
-                });
+               [self postREgMessageceshi];
+               
+               
                 [self singleActionSuccess:true];
                
                 break;
@@ -266,7 +245,7 @@
     NSURLSession *session = [NSURLSession sharedSession];
     // 创建 URL
     
-    NSString *Str=[NSString stringWithFormat:@"%s/user/save",HT];
+    NSString *Str=[NSString stringWithFormat:@"%@/user/save",HttpUtils.getHttpMsg];
     // NSLog(@"url****data:%@",Str);
     NSString *Str2=[NSString stringWithFormat:@"id=%@&name=%@&idNumber=%@&address=%@&sex=%@&photo=%@",[self.dic valueForKey:@"id"] ,[self.dic valueForKey:@"name"],[self.dic valueForKey:@"num"],NULL,NULL,self.base64String];
     
@@ -292,9 +271,13 @@
     [task resume];
 }
 - (void)postREgMessageceshi{
-    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
-                                                          delegate:self delegateQueue:[NSOperationQueue mainQueue]];
-    NSString *Str=@"https://182.50.124.210:9121/faceRecognition";
+//    NSURLSession *session=[NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:self delegateQueue:[[NSOperationQueue alloc] init]];
+    
+   NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]
+                                                         delegate:self delegateQueue:[NSOperationQueue mainQueue]];
+    
+    NSString *Str=HttpUtils.getHttpFaceMsg;
+   //NSString *Str=@"https://baidu.com";
     // NSLog(@"url****data:%@",Str);
    
     NSURL *url = [NSURL URLWithString:Str];
@@ -314,13 +297,13 @@
 //
     [dict setValue:@"faceRecognition" forKey:@"cmd"];
    
-    
+    NSLog(@"3**************:%@",[userDefaults valueForKey:@"phone"]);
     [dict setValue:[self.dic valueForKey:@"name"] forKey:@"name"];
     [dict setValue:[self.dic valueForKey:@"num"] forKey:@"idnumber"];
-    [dict setValue:self.base64String forKey:@"image"];
+    [dict setValue:self.postBase64String forKey:@"image"];
     [dict setValue: @0 forKey:@"imagetype"];
     [dict setValue:[self getTimeNow] forKey:@"sendTime"];
-     [dict setValue: [userDefaults valueForKey:@"phone"] forKey:@"terminalNo"];
+    [dict setValue:[userDefaults valueForKey:@"phone"] forKey:@"terminalNo"];
     // 1.判断当前对象是否能够转换成JSON数据.
    
     // YES if obj can be converted to JSON data, otherwise NO
@@ -338,10 +321,62 @@
     
     
     // 创建任务 task
+        
+        __weak typeof(self) weakSelf = self;
     NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSLog(@"###data:%@",data);
         NSLog(@"###errpr:%@",error);
-        NSLog(@"%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        NSLog(@"2%@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+        if([[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]!=NULL){
+            
+           
+            id obj = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+            
+         self.biaoshi=[[obj valueForKey:@"Score"]intValue];
+            NSLog(@"%d", self.biaoshi);
+            
+        }
+        // 保存用户名， 下次自动填充用户名
+        if( self.biaoshi >= 45){
+           
+        [self persistent];
+        //向后台发送信息
+        [self postREgMessage];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [UIView animateWithDuration:0.5 animations:^{
+                    weakSelf.animaView.alpha = 1;
+                } completion:^(BOOL finished) {
+                    [UIView animateWithDuration:0.5 animations:^{
+                        weakSelf.animaView.alpha = 1;
+                    } completion:^(BOOL finished) {
+                        [weakSelf closeAction];
+                        UIViewController* fatherViewController = weakSelf.presentingViewController;
+                        FaceEndViewController* dvc = [[FaceEndViewController alloc]init];
+                        
+                        dvc.peopleDic=self.dic;
+                        dvc.photo=self.base64String;
+                        [fatherViewController presentViewController:dvc animated:YES completion:nil];
+                        
+                        
+                    }];
+                }];
+                
+            });
+        }else{
+            NSLog(@"22222:%d", self.biaoshi);
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"remind" message:@"认证失败" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* action = [UIAlertAction actionWithTitle:@"知道啦" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+                    NSLog(@"知道啦");
+                }];
+                [alert addAction:action];
+                UIViewController* fatherViewController = weakSelf.presentingViewController;
+                [weakSelf dismissViewControllerAnimated:YES completion:^{
+                    [fatherViewController presentViewController:alert animated:YES completion:nil];
+                }];
+            });
+          
+            }
     }];
     
     
@@ -350,6 +385,7 @@
     //启动任务
         [task resume];}
 }
+
 - (NSString *)getTimeNow{
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     // ----------设置你想要的格式,hh与HH的区别:分别表示12小时制,24小时制
@@ -362,19 +398,45 @@
     return currentTimeString;
     
 }
+#pragma mark -session delegate
+//-(void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler {
+//
+//    NSURLSessionAuthChallengeDisposition disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+//    __block NSURLCredential *credential = nil;
+//
+//    if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust] && [challenge.protectionSpace.host hasSuffix:@"example.com"]) {
+//        credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
+//        if (credential) {
+//            disposition = NSURLSessionAuthChallengeUseCredential;
+//        } else {
+//            disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+//        }
+//    } else {
+//        disposition = NSURLSessionAuthChallengePerformDefaultHandling;
+//    }
+//
+//    if (completionHandler) {
+//        completionHandler(disposition, credential);
+//    }
+//}
+
+
+
 - (void)URLSession:(NSURLSession *)session didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
  completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition disposition, NSURLCredential * _Nullable credential))completionHandler
 {
+    
+    
     NSLog(@"didReceiveChallenge ");
     if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust]) {
         NSLog(@"server ---------");
         //        [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
         NSString *host = challenge.protectionSpace.host;
         NSLog(@"%@", host);
-        
+
         NSURLCredential *credential = [NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust];
-        
-        
+
+
         completionHandler(NSURLSessionAuthChallengeUseCredential, credential);
     }
     else if([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodClientCertificate])
@@ -383,7 +445,7 @@
         //TODO:设置客户端证书认证
         // load cert
         NSLog(@"client");
-        NSString *path = [[NSBundle mainBundle]pathForResource:@"1"ofType:@"cer"];
+        NSString *path = [[NSBundle mainBundle]pathForResource:@"hcr"ofType:@"cer"];
         NSData *p12data = [NSData dataWithContentsOfFile:path];
         CFDataRef inP12data = (__bridge CFDataRef)p12data;
         SecIdentityRef myIdentity;
@@ -531,18 +593,18 @@
     }
     
     //获取原图片宽高比
-    CGFloat sourceImageAspectRatio = sourceImage.size.width/sourceImage.size.height;
+    CGFloat sourceImageAspectRatio =1;
     //先调整分辨率
-    CGSize defaultSize = CGSizeMake(1024, 1024/sourceImageAspectRatio);
+    CGSize defaultSize = CGSizeMake(266, 266/sourceImageAspectRatio);
     UIImage *newImage = [self newSizeImage:defaultSize image:sourceImage];
     
     finallImageData = UIImageJPEGRepresentation(newImage,1.0);
     
     //保存压缩系数
     NSMutableArray *compressionQualityArr = [NSMutableArray array];
-    CGFloat avg   = 1.0/250;
+    CGFloat avg   = 1.0/100;
     CGFloat value = avg;
-    for (int i = 250; i >= 1; i--) {
+    for (int i = 100; i >= 1; i--) {
         value = i*avg;
         [compressionQualityArr addObject:@(value)];
     }

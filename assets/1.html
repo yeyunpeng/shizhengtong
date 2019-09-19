@@ -1,325 +1,336 @@
 <!DOCTYPE html>
 <html>
-    
-    <head>
-        <meta charset="utf-8">
-            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-            <title>ID</title>
-            <link rel="stylesheet" type="text/css" href="./css/style.css" />
-            <link rel="stylesheet" href="./css/index.css">
-                <link rel="stylesheet" type="text/css" href="./css/popshow.css" />
-                <link rel="stylesheet" type="text/css" href="./css/hui.css" />
-                <style type="text/css">
-                    html,body{
-                        background: #FFFFFF;
-                    }
-                .slideshow{
-                    
-                }
-                .tit_text_img{
-                    width: 100px;
-                    height: 50px;
-                    margin: 0 auto;
-                    margin-top: 95px;
-                }
-                .img_1{
-                    background: url(img/startbanner/tit_text1.png);
-                    background-size: 100% 100%;
-                }
-                .img_2{
-                    background: url(img/startbanner/tit_text2.png);
-                    background-size: 100% 100%;
-                }
-                .img_3{
-                    background: url(img/startbanner/tit_text3.png);
-                    background-size: 100% 100%;
-                }
-                .tit_wenzi{
-                    width: 126px;
-                    height: 25px;
-                    line-height: 25px;
-                    margin: 0 auto;
-                    color: #022389;
-                    font-size: 18px;
-                    margin-top: 12px;
-                }
-                .guide{
-                    width: 100%;
-                    height:300px;
-                    margin: 0 auto;
-                    margin-top:40px;
-                }
-                .guide_img1{
-                    background:url(img/startbanner/fangbian.png) no-repeat;
-                    background-size: 100% 100%;
-                }
-                .guide_img2{
-                    background:url(img/startbanner/anquan.png) no-repeat;
-                    background-size: 100% 100%;
-                }
-                .guide_img3{
-                    background:url(img/startbanner/kuaijie.png) no-repeat;
-                    background-size: 100% 100%;
-                }
-                
-                    </style>
-                </head>
-    
-    <body>
-        
-        <div class="container" style="position: fixed;">
-            
-            <div class="hui-start-banner hui-swipe" id="startBanner">
-                <div class="hui-swipe-items">
-                    <div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
-                        <div class="tit_text_img img_1">
-                        </div>
-                        <div class="tit_wenzi">
-                            无证出行更方便
-                        </div>
-                        <div class="guide guide_img1">
-                            
-                        </div>
-                    </div>
-                    <div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
-                        <div class="tit_text_img img_2">
-                        </div>
-                        <div class="tit_wenzi">
-                            人脸认证更安全
-                        </div>
-                        <div class="guide guide_img2">
-                            
-                        </div>
-                    </div>
-                    <div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
-                        <div class="tit_text_img img_3">
-                        </div>
-                        <div class="tit_wenzi">
-                            办理业务更快捷
-                        </div>
-                        <div class="guide guide_img3">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="hui-start-banner-close" class="swipe_show" onclick="huiStartBannerClose();">立即体验</div>
-            <div class="masker" id="masker">
-                <div class="popup" style="border-radius: 2px;">
-                    <div class="top-bg">
-                        <div class="title" style="font-size: 18px;color: #FFFFFF;">服务授权</div>
-                        <img src="./img/logo.png" alt="">
-                            </div>
-                    <div class="title2">授权 <strong>世证通</strong> 获取以下信息为你服务</div>
-                    <ul>
-                        <li style="color: #999999;list-style-type: disc;">获得你的公开信息</li>
-                        <li style="color: #999999;list-style-type: disc;">使用身份信息(姓名、手机号、证件号码)办理业务</li>
-                    </ul>
-                    <div class="hr"></div>
-                    <div class="ensure">同意<span><a href="./13.html" style="color: #108EE9;">《用户服务协议》</a>
-                        <a href="./ys.html" style="color: #108EE9;">《用户隐私协议》</a></span></div>
-                    <div class="ensure-btn" id="hide-masker"><span style="color: #FFFFFF;font-size: 18px;">确认授权</span></div>
-                </div>
-            </div>
-            <div class="id-container">
-                <header>
-                    <img onclick="showPop();" class="personal" src="./img/personal.png" alt="个人图标">
-                        <h1>世证通
-                        </h1>
-                        <div class="extra"><span class="weather">让身份登记更方便</span></div>
-                        </header>
-                <main>
-                    <div onclick="showPop()" class="identification">
-                        <span style="color: white;">登 录</span>
-                    </div>
-                </main>
-                <nav>
-                    <ul class="row">
-                        <li onclick="showPop()" class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">身份证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">因私电子护照</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">台湾通行证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">港澳通行证</div>
-                            </li>
-                    </ul>
-                    <ul class="row">
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">内地通行证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">台湾通行证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">港澳台居住证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">中国绿卡</div>
-                            </li>
-                    </ul>
-                    <ul class="row">
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">驾驶证</div>
-                            </li>
-                        <li class="item"><img src="./img/plus.png" alt="">
-                            <div class="name">行车证</div>
-                            </li>
-                        <li class="item"><img src="./img/more.png" alt="">
-                            <div class="name">敬请期待</div>
-                            </li>
-                        <li class="item"><img src="./img/more.png" alt="">
-                            <div class="name">期待更多</div>
-                            </li>
-                    </ul>
-                </nav>
-            </div>
-            
-            <div class="service-container" style="position: relative;">
-                <div style="position: absolute;left:45px;top:40px;width:160px;color:#2439A5">
-                    <div>世证通App上线啦</div>
-                    <div style="font-size:9px;margin-top:5px">世证在手，让身份登记变得更加简单</div>
-                    <div style="margin-top:20px;background:#EB9B30;color:white;width:71px;height:20px;border-radius:11px;font-size:10px;text-align: center;line-height: 20px">查看详情</div>
-                </div>
-                <img src="./img/banner-o.png" alt="" style="width:100%" onclick="showpic()">
-                    </div>
-            <!--<div class="service-container">-->
-            <!--<div class="content">-->
-            <!--<div class="title">便民服务</div>-->
-            <!--<div class="nav-box">-->
-            <!--<div class="nav-item"><img src="./img/home_cxfw.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">出行服务</div>-->
-            <!--<div class="kind">火车高铁 | 飞机轮船</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Euros.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">酒店住宿</div>-->
-            <!--<div class="kind">商务酒店 | 经济民宿</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/home_wdfu.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">网点服务</div>-->
-            <!--<div class="kind">公安警力 | 移民局</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Icon (2).png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">交通管理</div>-->
-            <!--<div class="kind">机动车 | 驾驶证</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/Icon.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">出入境服务</div>-->
-            <!--<div class="kind">预约申请 | 再次签注</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="nav-item"><img src="./img/home_wgrfw.png" alt="">-->
-            <!--<div class="nc">-->
-            <!--<div class="name">外国人业务</div>-->
-            <!--<div class="kind">居留许可 | 住宿登记</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="clear-data"><span>清除数据</span></div>-->
-            <!--</div>-->
-        </div>
-        <script src="./js/jquery.min.js"></script>
-        <script src="js/fastclick.js"></script>
-        <script>
-            $(function() {
-              FastClick.attach(document.body);
-              });
-            </script>
-        <script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
-        <script type="text/javascript" charset="utf-8">
-            //拦截安卓回退按钮，调用H5的返回方法
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>ID</title>
+		<link rel="stylesheet" type="text/css" href="./css/style.css" />
+		<link rel="stylesheet" href="./css/index.css">
+		<link rel="stylesheet" type="text/css" href="./css/popshow.css" />
+		<link rel="stylesheet" type="text/css" href="./css/hui.css" />
+		<style type="text/css">
+			html,
+			body {
+				background: #FFFFFF;
+			}
+
+			.slideshow {}
+
+			.tit_text_img {
+				width: 100px;
+				height: 50px;
+				margin: 0 auto;
+				margin-top: 95px;
+			}
+
+			.img_1 {
+				background: url(img/startbanner/tit_text1.png);
+				background-size: 100% 100%;
+			}
+
+			.img_2 {
+				background: url(img/startbanner/tit_text2.png);
+				background-size: 100% 100%;
+			}
+
+			.img_3 {
+				background: url(img/startbanner/tit_text3.png);
+				background-size: 100% 100%;
+			}
+
+			.tit_wenzi {
+				width: 126px;
+				height: 25px;
+				line-height: 25px;
+				margin: 0 auto;
+				color: #022389;
+				font-size: 18px;
+				margin-top: 12px;
+			}
+
+			.guide {
+				width: 100%;
+				height: 300px;
+				margin: 0 auto;
+				margin-top: 40px;
+			}
+
+			.guide_img1 {
+				background: url(img/startbanner/fangbian.png) no-repeat;
+				background-size: 100% 100%;
+			}
+
+			.guide_img2 {
+				background: url(img/startbanner/anquan.png) no-repeat;
+				background-size: 100% 100%;
+			}
+
+			.guide_img3 {
+				background: url(img/startbanner/kuaijie.png) no-repeat;
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="container" >
+
+			<div class="hui-start-banner hui-swipe" id="startBanner" style="position:fixed;">
+				<div class="hui-swipe-items">
+					<div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
+						<div class="tit_text_img img_1">
+						</div>
+						<div class="tit_wenzi">
+							无证出行更方便
+						</div>
+						<div class="guide guide_img1">
+
+						</div>
+					</div>
+					<div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
+						<div class="tit_text_img img_2">
+						</div>
+						<div class="tit_wenzi">
+							人脸认证更安全
+						</div>
+						<div class="guide guide_img2">
+
+						</div>
+					</div>
+					<div class="hui-swipe-item slideshow" style="background:#FFFFFF;">
+						<div class="tit_text_img img_3">
+						</div>
+						<div class="tit_wenzi">
+							办理业务更快捷
+						</div>
+						<div class="guide guide_img3">
+
+						</div>
+					</div>
+				</div>
+			</div>
+			<div id="hui-start-banner-close" class="swipe_show" onclick="huiStartBannerClose();">立即体验</div>
+			<div class="masker" id="masker">
+				<div class="popup" style="border-radius: 2px;">
+					<div class="top-bg">
+						<div class="title" style="font-size: 18px;color: #FFFFFF;">服务授权</div>
+						<img src="./img/logo.png" alt="">
+					</div>
+					<div class="title2">授权 <strong>世证通</strong> 获取以下信息为你服务</div>
+					<ul>
+						<li style="color: #999999;list-style-type: disc;">获得你的公开信息</li>
+						<li style="color: #999999;list-style-type: disc;">使用身份信息(姓名、手机号、证件号码)办理业务</li>
+					</ul>
+					<div class="hr"></div>
+					<div class="ensure">同意<span>
+							<a href="./ys.html" style="color: #108EE9;">《用户隐私协议》</a></span></div>
+					<div class="ensure-btn" id="hide-masker"><span style="color: #FFFFFF;font-size: 18px;">确认授权</span></div>
+				</div>
+			</div>
+			<div class="id-container">
+				<header>
+					<img onclick="showPop();" class="personal" src="./img/personal.png" alt="个人图标">
+					<h1>世证通
+					</h1>
+					<div class="extra"><span class="weather">让身份登记更方便</span></div>
+				</header>
+				<main>
+					<div onclick="showPop()" class="identification">
+						<span style="color: white;">登 录</span>
+					</div>
+				</main>
+				<nav>
+					<ul class="row">
+						<li onclick="showPop()" class="item"><img src="./img/plus.png" alt="">
+							<div class="name">身份证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">因私电子护照</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">台湾通行证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">港澳通行证</div>
+						</li>
+					</ul>
+					<ul class="row">
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">内地通行证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">台湾通行证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">港澳台居住证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">中国绿卡</div>
+						</li>
+					</ul>
+					<ul class="row">
+						<li onclick="showPop()"  class="item"><img src="./img/plus.png" alt="">
+							<div class="name">驾驶证</div>
+						</li>
+						<li  onclick="showPop()" class="item"><img src="./img/plus.png" alt="">
+							<div class="name">行车证</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/more.png" alt="">
+							<div class="name">敬请期待</div>
+						</li>
+						<li onclick="showPop()"  class="item"><img src="./img/more.png" alt="">
+							<div class="name">期待更多</div>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="service-container" style="position: relative;">
+				<div style="position: absolute;left:45px;top:40px;width:160px;color:#2439A5">
+					<div>世证通App上线啦</div>
+					<div style="font-size:9px;margin-top:5px">世证在手，让身份登记变得更加简单</div>
+					<div style="margin-top:20px;background:#EB9B30;color:white;width:71px;height:20px;border-radius:11px;font-size:10px;text-align: center;line-height: 20px">查看详情</div>
+				</div>
+				<img src="./img/banner-o.png" alt="" style="width:100%" onclick="showpic()">
+			</div>
+			<!--<div class="service-container">-->
+			<!--<div class="content">-->
+			<!--<div class="title">便民服务</div>-->
+			<!--<div class="nav-box">-->
+			<!--<div class="nav-item"><img src="./img/home_cxfw.png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">出行服务</div>-->
+			<!--<div class="kind">火车高铁 | 飞机轮船</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="nav-item"><img src="./img/Euros.png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">酒店住宿</div>-->
+			<!--<div class="kind">商务酒店 | 经济民宿</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="nav-item"><img src="./img/home_wdfu.png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">网点服务</div>-->
+			<!--<div class="kind">公安警力 | 移民局</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="nav-item"><img src="./img/Icon (2).png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">交通管理</div>-->
+			<!--<div class="kind">机动车 | 驾驶证</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="nav-item"><img src="./img/Icon.png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">出入境服务</div>-->
+			<!--<div class="kind">预约申请 | 再次签注</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="nav-item"><img src="./img/home_wgrfw.png" alt="">-->
+			<!--<div class="nc">-->
+			<!--<div class="name">外国人业务</div>-->
+			<!--<div class="kind">居留许可 | 住宿登记</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--</div>-->
+			<!--<div class="clear-data"><span>清除数据</span></div>-->
+			<!--</div>-->
+		</div>
+		<script src="./js/jquery.min.js"></script>
+		<script src="js/fastclick.js"></script>
+		<script>
+			$(function() {
+				FastClick.attach(document.body);
+			});
+		</script>
+		<script src="./js/hui.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" charset="utf-8">
+			//拦截安卓回退按钮，调用H5的返回方法
 <!--            history.pushState(null, null, location.href);-->
 <!--            window.addEventListener('popstate', function(event) {-->
-<!--                                    history.pushState(null, null, location.href);-->
-<!--                                    // GoBackUrl();H5自己定义的返回方法确定-->
-<!--                                    hui.confirm('<h4 style="font-size:18px;">确定退出应用吗？', ['取消', '确定'],-->
-<!--                                                function() {-->
-<!--                                                nativeMethod.over();-->
-<!--                                                },-->
-<!--                                                function() {});-->
-<!--                                    });-->
-                                    hui.ready(function() {
-                                              if (!localStorage.getItem("once")) {
-                                              localStorage.setItem("once", "once");
-                                              var wininfo = hui.winInfo();
-                                              hui('#startBanner').find('.hui-swipe-item').css({
-                                                                                              height: wininfo.height + 'px'
-                                                                                              });
-                                              hui('#startBanner').show();
-                                              hui('#hui-start-banner-close').show();
-                                              var swipe = new huiSwpie('#startBanner');
-                                              swipe.autoPlay = false;
-                                              swipe.loop = false;
-                                              swipe.run();
-                                              }
-                                              if (localStorage.getItem("need") == "y") {
-                                              hui.open('1.html');
-                                              } else if (localStorage.getItem("need") == "n") {
-                                              window.webkit.messageHandlers.goto6.postMessage(null);
-                                              }
-                                              
-                                              // 关闭弹出层
-                                              var masker = document.getElementById('masker');
-                                              masker.style = 'display:none';
-                                              window.ontouchmove = "";
-                                              });
-                                              
-                                              function showPop() {
-                                                  
-                                                  if (localStorage.getItem("pop")) {
-                                                      hui.open('login.html');
-                                                  } else {
-                                                      op();
-                                                  }
-                                              }
-        
-        function huiStartBannerClose() {
-            hui('#startBanner').remove();
-            hui('#hui-start-banner-close').remove();
-        }
-        
-        function op() {
-            var masker = document.getElementById('masker');
-            masker.style = 'display:block';
-            window.ontouchmove = "";
-            
-            window.ontouchmove = function(e) {
-                e.preventDefault && e.preventDefault();
-                e.returnValue = false;
-                e.stopPropagation && e.stopPropagation();
-                return false;
-            };
-            document.getElementById('hide-masker').onclick = function() {
-                localStorage.setItem("pop", "t");
-                var masker = document.getElementById('masker');
-                masker.style = 'display:none';
-                window.ontouchmove = "";
-                
-                hui.open('login.html');
-            };
-        }
-        
-        function showpic() {
-            hui.open('banner.html');
-        }
-        </script>
-        
-        <script type="text/javascript" src="./js/hui-swipe.js" charset="UTF-8"></script>
-    </body>
-    
-</html>
+<!--                history.pushState(null, null, location.href);-->
+<!--                // GoBackUrl();H5自己定义的返回方法确定-->
+<!--                hui.confirm('<h4 style="font-size:18px;">确定退出应用吗？', ['取消', '确定'],-->
+<!--                    function() {-->
+<!--                        nativeMethod.over();-->
+<!--                    },-->
+<!--                    function() {});-->
+<!--            });-->
+			hui.ready(function() {
+				if (!localStorage.getItem("once")) {
+					localStorage.setItem("once", "once");
+					var wininfo = hui.winInfo();
+					hui('#startBanner').find('.hui-swipe-item').css({
+						height: wininfo.height + 'px'
+					});
+					hui('#startBanner').show();
+					hui('#hui-start-banner-close').show();
+					var swipe = new huiSwpie('#startBanner');
+					swipe.autoPlay = false;
+					swipe.loop = false;
+					swipe.run();
+				}
 
+				<!--hui.iconToast(localStorage.getItem("need"), 'warn');-->
+
+<!--                if (localStorage.getItem("need") == "y") {-->
+<!--                    hui.open('1.html');-->
+<!--                } else if (localStorage.getItem("need") == "n") {-->
+<!--                     window.webkit.messageHandlers.goto6.postMessage(null);-->
+<!--                }-->
+
+
+				// 关闭弹出层
+				var masker = document.getElementById('masker');
+				masker.style = 'display:none';
+				window.ontouchmove = "";
+			});
+
+			function showPop() {
+
+				if (localStorage.getItem("pop")) {
+					hui.open('login.html');
+				} else {
+					op();
+				}
+			}
+
+			function huiStartBannerClose() {
+				hui('#startBanner').remove();
+				hui('#hui-start-banner-close').remove();
+			}
+
+			function op() {
+				var masker = document.getElementById('masker');
+				masker.style = 'display:block';
+				window.ontouchmove = "";
+
+				window.ontouchmove = function(e) {
+					e.preventDefault && e.preventDefault();
+					e.returnValue = false;
+					e.stopPropagation && e.stopPropagation();
+					return false;
+				};
+				document.getElementById('hide-masker').onclick = function() {
+					localStorage.setItem("pop", "t");
+					var masker = document.getElementById('masker');
+					masker.style = 'display:none';
+					window.ontouchmove = "";
+
+					hui.open('login.html');
+				};
+			}
+
+			function showpic() {
+				hui.open('banner.html');
+			}
+		</script>
+
+		<script type="text/javascript" src="./js/hui-swipe.js" charset="UTF-8"></script>
+	</body>
+
+</html>
